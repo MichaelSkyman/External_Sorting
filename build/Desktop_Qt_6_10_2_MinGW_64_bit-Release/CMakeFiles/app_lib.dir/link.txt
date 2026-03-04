@@ -1,0 +1,2 @@
+C:\Qt\Tools\mingw1310_64\bin\ar.exe qc lib\libapp_lib.a CMakeFiles/app_lib.dir/source/app/config.cpp.obj CMakeFiles/app_lib.dir/source/app/memory_detect.cpp.obj
+C:\Qt\Tools\mingw1310_64\bin\ranlib.exe lib\libapp_lib.a

@@ -1,0 +1,7 @@
+set(__QT_DEPLOY_TARGET_base_lib_FILE C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Release/lib/libbase_lib.a)
+set(__QT_DEPLOY_TARGET_base_lib_TYPE STATIC_LIBRARY)
+set(__QT_DEPLOY_TARGET_app_lib_FILE C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Release/lib/libapp_lib.a)
+set(__QT_DEPLOY_TARGET_app_lib_TYPE STATIC_LIBRARY)
+set(__QT_DEPLOY_TARGET_external_sort_FILE C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Release/bin/external_sort.exe)
+set(__QT_DEPLOY_TARGET_external_sort_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_external_sort_RUNTIME_DLLS C:/Qt/6.10.2/mingw_64/bin/Qt6Widgets.dll;C:/Qt/6.10.2/mingw_64/bin/Qt6Gui.dll;C:/Qt/6.10.2/mingw_64/bin/Qt6Core.dll)

@@ -82,23 +82,14 @@ target_include_directories(external_sort PRIVATE
     ${CMAKE_SOURCE_DIR}/source
 )
 
-# ================= Tool =================
-add_executable(read_inp_outp
-    source/read_inp_outp.cpp
-)
-
-target_link_libraries(read_inp_outp PRIVATE base_lib)
-
 # ================= Warnings =================
 if(MSVC)
     target_compile_options(external_sort PRIVATE /W4)
-    target_compile_options(read_inp_outp PRIVATE /W4)
 else()
     target_compile_options(external_sort PRIVATE -Wall -Wextra -g3)
-    target_compile_options(read_inp_outp PRIVATE -Wall -Wextra -g3)
 endif()
 
 # ================= Install =================
-install(TARGETS external_sort read_inp_outp
+install(TARGETS external_sort
     RUNTIME DESTINATION bin
 )

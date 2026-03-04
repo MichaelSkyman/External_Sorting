@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-e1aa30e8c822450d67b1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ExternalSortingDemo",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "app_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-app_lib-Release-b1a006f9a73ea23ff349.json",
+					"name" : "app_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "base_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-base_lib-Release-db389bc78d20bf46e205.json",
+					"name" : "base_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "external_sort::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-external_sort-Release-89505ac7dfd9e04119e4.json",
+					"name" : "external_sort",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "external_sort_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-external_sort_autogen-Release-753ae4a93fe66f25d61e.json",
+					"name" : "external_sort_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "external_sort_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-external_sort_autogen_timestamp_deps-Release-da9e1f7e98c12dfa9252.json",
+					"name" : "external_sort_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Release",
+		"source" : "C:/External_Sorting"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

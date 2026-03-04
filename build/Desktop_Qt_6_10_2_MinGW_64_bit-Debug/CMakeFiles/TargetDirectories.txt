@@ -1,7 +1,6 @@
 C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/base_lib.dir
 C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/app_lib.dir
 C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/external_sort.dir
-C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/read_inp_outp.dir
 C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
 C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
 C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
@@ -10,5 +9,3 @@ C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/instal
 C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
 C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/external_sort_autogen_timestamp_deps.dir
 C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/external_sort_autogen.dir
-C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/read_inp_outp_autogen_timestamp_deps.dir
-C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/read_inp_outp_autogen.dir

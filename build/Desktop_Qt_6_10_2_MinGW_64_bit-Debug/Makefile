@@ -200,19 +200,6 @@ external_sort/fast:
 .PHONY : external_sort/fast
 
 #=============================================================================
-# Target rules for targets named read_inp_outp
-
-# Build rule for target.
-read_inp_outp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 read_inp_outp
-.PHONY : read_inp_outp
-
-# fast build rule for target.
-read_inp_outp/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\read_inp_outp.dir\build.make CMakeFiles/read_inp_outp.dir/build
-.PHONY : read_inp_outp/fast
-
-#=============================================================================
 # Target rules for targets named external_sort_autogen_timestamp_deps
 
 # Build rule for target.
@@ -237,32 +224,6 @@ external_sort_autogen: cmake_check_build_system
 external_sort_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort_autogen.dir\build.make CMakeFiles/external_sort_autogen.dir/build
 .PHONY : external_sort_autogen/fast
-
-#=============================================================================
-# Target rules for targets named read_inp_outp_autogen_timestamp_deps
-
-# Build rule for target.
-read_inp_outp_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 read_inp_outp_autogen_timestamp_deps
-.PHONY : read_inp_outp_autogen_timestamp_deps
-
-# fast build rule for target.
-read_inp_outp_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\read_inp_outp_autogen_timestamp_deps.dir\build.make CMakeFiles/read_inp_outp_autogen_timestamp_deps.dir/build
-.PHONY : read_inp_outp_autogen_timestamp_deps/fast
-
-#=============================================================================
-# Target rules for targets named read_inp_outp_autogen
-
-# Build rule for target.
-read_inp_outp_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 read_inp_outp_autogen
-.PHONY : read_inp_outp_autogen
-
-# fast build rule for target.
-read_inp_outp_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\read_inp_outp_autogen.dir\build.make CMakeFiles/read_inp_outp_autogen.dir/build
-.PHONY : read_inp_outp_autogen/fast
 
 external_sort_autogen/72ZSY5ZTOK/qrc_resources.obj: external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj
 .PHONY : external_sort_autogen/72ZSY5ZTOK/qrc_resources.obj
@@ -311,30 +272,6 @@ external_sort_autogen/mocs_compilation.s: external_sort_autogen/mocs_compilation
 external_sort_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/external_sort_autogen/mocs_compilation.cpp.s
 .PHONY : external_sort_autogen/mocs_compilation.cpp.s
-
-read_inp_outp_autogen/mocs_compilation.obj: read_inp_outp_autogen/mocs_compilation.cpp.obj
-.PHONY : read_inp_outp_autogen/mocs_compilation.obj
-
-# target to build an object file
-read_inp_outp_autogen/mocs_compilation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\read_inp_outp.dir\build.make CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.obj
-.PHONY : read_inp_outp_autogen/mocs_compilation.cpp.obj
-
-read_inp_outp_autogen/mocs_compilation.i: read_inp_outp_autogen/mocs_compilation.cpp.i
-.PHONY : read_inp_outp_autogen/mocs_compilation.i
-
-# target to preprocess a source file
-read_inp_outp_autogen/mocs_compilation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\read_inp_outp.dir\build.make CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.i
-.PHONY : read_inp_outp_autogen/mocs_compilation.cpp.i
-
-read_inp_outp_autogen/mocs_compilation.s: read_inp_outp_autogen/mocs_compilation.cpp.s
-.PHONY : read_inp_outp_autogen/mocs_compilation.s
-
-# target to generate assembly for a file
-read_inp_outp_autogen/mocs_compilation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\read_inp_outp.dir\build.make CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.s
-.PHONY : read_inp_outp_autogen/mocs_compilation.cpp.s
 
 source/app/config.obj: source/app/config.cpp.obj
 .PHONY : source/app/config.obj
@@ -600,30 +537,6 @@ source/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/main.cpp.s
 .PHONY : source/main.cpp.s
 
-source/read_inp_outp.obj: source/read_inp_outp.cpp.obj
-.PHONY : source/read_inp_outp.obj
-
-# target to build an object file
-source/read_inp_outp.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\read_inp_outp.dir\build.make CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.obj
-.PHONY : source/read_inp_outp.cpp.obj
-
-source/read_inp_outp.i: source/read_inp_outp.cpp.i
-.PHONY : source/read_inp_outp.i
-
-# target to preprocess a source file
-source/read_inp_outp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\read_inp_outp.dir\build.make CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.i
-.PHONY : source/read_inp_outp.cpp.i
-
-source/read_inp_outp.s: source/read_inp_outp.cpp.s
-.PHONY : source/read_inp_outp.s
-
-# target to generate assembly for a file
-source/read_inp_outp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\read_inp_outp.dir\build.make CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.s
-.PHONY : source/read_inp_outp.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -638,21 +551,15 @@ help:
 	@echo ... rebuild_cache
 	@echo ... external_sort_autogen
 	@echo ... external_sort_autogen_timestamp_deps
-	@echo ... read_inp_outp_autogen
-	@echo ... read_inp_outp_autogen_timestamp_deps
 	@echo ... app_lib
 	@echo ... base_lib
 	@echo ... external_sort
-	@echo ... read_inp_outp
 	@echo ... external_sort_autogen/72ZSY5ZTOK/qrc_resources.obj
 	@echo ... external_sort_autogen/72ZSY5ZTOK/qrc_resources.i
 	@echo ... external_sort_autogen/72ZSY5ZTOK/qrc_resources.s
 	@echo ... external_sort_autogen/mocs_compilation.obj
 	@echo ... external_sort_autogen/mocs_compilation.i
 	@echo ... external_sort_autogen/mocs_compilation.s
-	@echo ... read_inp_outp_autogen/mocs_compilation.obj
-	@echo ... read_inp_outp_autogen/mocs_compilation.i
-	@echo ... read_inp_outp_autogen/mocs_compilation.s
 	@echo ... source/app/config.obj
 	@echo ... source/app/config.i
 	@echo ... source/app/config.s
@@ -686,9 +593,6 @@ help:
 	@echo ... source/main.obj
 	@echo ... source/main.i
 	@echo ... source/main.s
-	@echo ... source/read_inp_outp.obj
-	@echo ... source/read_inp_outp.i
-	@echo ... source/read_inp_outp.s
 .PHONY : help
 
 

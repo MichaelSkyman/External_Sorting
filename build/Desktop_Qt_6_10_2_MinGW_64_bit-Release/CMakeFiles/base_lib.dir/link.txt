@@ -1,0 +1,2 @@
+C:\Qt\Tools\mingw1310_64\bin\ar.exe qc lib\libbase_lib.a CMakeFiles/base_lib.dir/source/base/external_sort.cpp.obj
+C:\Qt\Tools\mingw1310_64\bin\ranlib.exe lib\libbase_lib.a

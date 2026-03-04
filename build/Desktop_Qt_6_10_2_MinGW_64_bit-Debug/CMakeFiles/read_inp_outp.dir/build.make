@@ -68,18 +68,11 @@ include CMakeFiles/read_inp_outp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/read_inp_outp.dir/flags.make
 
-read_inp_outp_autogen/timestamp: C:/Qt/6.10.2/mingw_64/bin/moc.exe
-read_inp_outp_autogen/timestamp: C:/Qt/6.10.2/mingw_64/bin/uic.exe
-read_inp_outp_autogen/timestamp: CMakeFiles/read_inp_outp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target read_inp_outp"
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/read_inp_outp_autogen.dir/AutogenInfo.json Debug
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/read_inp_outp_autogen/timestamp
-
 CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.obj: CMakeFiles/read_inp_outp.dir/flags.make
 CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.obj: CMakeFiles/read_inp_outp.dir/includes_CXX.rsp
 CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.obj: read_inp_outp_autogen/mocs_compilation.cpp
 CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.obj: CMakeFiles/read_inp_outp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\read_inp_outp.dir\read_inp_outp_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\read_inp_outp.dir\read_inp_outp_autogen\mocs_compilation.cpp.obj -c C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\read_inp_outp_autogen\mocs_compilation.cpp
 
 CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.i: cmake_force
@@ -90,37 +83,20 @@ CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\read_inp_outp_autogen\mocs_compilation.cpp -o CMakeFiles\read_inp_outp.dir\read_inp_outp_autogen\mocs_compilation.cpp.s
 
-CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.obj: CMakeFiles/read_inp_outp.dir/flags.make
-CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.obj: CMakeFiles/read_inp_outp.dir/includes_CXX.rsp
-CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.obj: C:/External_Sorting/source/read_inp_outp.cpp
-CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.obj: CMakeFiles/read_inp_outp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.obj -MF CMakeFiles\read_inp_outp.dir\source\read_inp_outp.cpp.obj.d -o CMakeFiles\read_inp_outp.dir\source\read_inp_outp.cpp.obj -c C:\External_Sorting\source\read_inp_outp.cpp
-
-CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\External_Sorting\source\read_inp_outp.cpp > CMakeFiles\read_inp_outp.dir\source\read_inp_outp.cpp.i
-
-CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\External_Sorting\source\read_inp_outp.cpp -o CMakeFiles\read_inp_outp.dir\source\read_inp_outp.cpp.s
-
 # Object files for target read_inp_outp
 read_inp_outp_OBJECTS = \
-"CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.obj" \
-"CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.obj"
+"CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.obj"
 
 # External object files for target read_inp_outp
 read_inp_outp_EXTERNAL_OBJECTS =
 
 bin/read_inp_outp.exe: CMakeFiles/read_inp_outp.dir/read_inp_outp_autogen/mocs_compilation.cpp.obj
-bin/read_inp_outp.exe: CMakeFiles/read_inp_outp.dir/source/read_inp_outp.cpp.obj
 bin/read_inp_outp.exe: CMakeFiles/read_inp_outp.dir/build.make
 bin/read_inp_outp.exe: lib/libbase_lib.a
 bin/read_inp_outp.exe: CMakeFiles/read_inp_outp.dir/linkLibs.rsp
 bin/read_inp_outp.exe: CMakeFiles/read_inp_outp.dir/objects1.rsp
 bin/read_inp_outp.exe: CMakeFiles/read_inp_outp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable bin\read_inp_outp.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin\read_inp_outp.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\read_inp_outp.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -131,7 +107,7 @@ CMakeFiles/read_inp_outp.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles\read_inp_outp.dir\cmake_clean.cmake
 .PHONY : CMakeFiles/read_inp_outp.dir/clean
 
-CMakeFiles/read_inp_outp.dir/depend: read_inp_outp_autogen/timestamp
+CMakeFiles/read_inp_outp.dir/depend:
 	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\External_Sorting C:\External_Sorting C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles\read_inp_outp.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/read_inp_outp.dir/depend
 
