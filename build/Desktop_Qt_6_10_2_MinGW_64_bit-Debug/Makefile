@@ -264,6 +264,30 @@ read_inp_outp_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\read_inp_outp_autogen.dir\build.make CMakeFiles/read_inp_outp_autogen.dir/build
 .PHONY : read_inp_outp_autogen/fast
 
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.obj: external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj
+.PHONY : external_sort_autogen/72ZSY5ZTOK/qrc_resources.obj
+
+# target to build an object file
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj
+.PHONY : external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj
+
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.i: external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.i
+.PHONY : external_sort_autogen/72ZSY5ZTOK/qrc_resources.i
+
+# target to preprocess a source file
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.i
+.PHONY : external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.i
+
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.s: external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.s
+.PHONY : external_sort_autogen/72ZSY5ZTOK/qrc_resources.s
+
+# target to generate assembly for a file
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.s
+.PHONY : external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.s
+
 external_sort_autogen/mocs_compilation.obj: external_sort_autogen/mocs_compilation.cpp.obj
 .PHONY : external_sort_autogen/mocs_compilation.obj
 
@@ -384,6 +408,30 @@ source/base/external_sort.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\base_lib.dir\build.make CMakeFiles/base_lib.dir/source/base/external_sort.cpp.s
 .PHONY : source/base/external_sort.cpp.s
 
+source/gui/animation/animation_controller.obj: source/gui/animation/animation_controller.cpp.obj
+.PHONY : source/gui/animation/animation_controller.obj
+
+# target to build an object file
+source/gui/animation/animation_controller.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.obj
+.PHONY : source/gui/animation/animation_controller.cpp.obj
+
+source/gui/animation/animation_controller.i: source/gui/animation/animation_controller.cpp.i
+.PHONY : source/gui/animation/animation_controller.i
+
+# target to preprocess a source file
+source/gui/animation/animation_controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.i
+.PHONY : source/gui/animation/animation_controller.cpp.i
+
+source/gui/animation/animation_controller.s: source/gui/animation/animation_controller.cpp.s
+.PHONY : source/gui/animation/animation_controller.s
+
+# target to generate assembly for a file
+source/gui/animation/animation_controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.s
+.PHONY : source/gui/animation/animation_controller.cpp.s
+
 source/gui/main_window.obj: source/gui/main_window.cpp.obj
 .PHONY : source/gui/main_window.obj
 
@@ -407,6 +455,126 @@ source/gui/main_window.s: source/gui/main_window.cpp.s
 source/gui/main_window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/main_window.cpp.s
 .PHONY : source/gui/main_window.cpp.s
+
+source/gui/visualization/external_sort_canvas.obj: source/gui/visualization/external_sort_canvas.cpp.obj
+.PHONY : source/gui/visualization/external_sort_canvas.obj
+
+# target to build an object file
+source/gui/visualization/external_sort_canvas.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.obj
+.PHONY : source/gui/visualization/external_sort_canvas.cpp.obj
+
+source/gui/visualization/external_sort_canvas.i: source/gui/visualization/external_sort_canvas.cpp.i
+.PHONY : source/gui/visualization/external_sort_canvas.i
+
+# target to preprocess a source file
+source/gui/visualization/external_sort_canvas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.i
+.PHONY : source/gui/visualization/external_sort_canvas.cpp.i
+
+source/gui/visualization/external_sort_canvas.s: source/gui/visualization/external_sort_canvas.cpp.s
+.PHONY : source/gui/visualization/external_sort_canvas.s
+
+# target to generate assembly for a file
+source/gui/visualization/external_sort_canvas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.s
+.PHONY : source/gui/visualization/external_sort_canvas.cpp.s
+
+source/gui/visualization/sort_visualizer.obj: source/gui/visualization/sort_visualizer.cpp.obj
+.PHONY : source/gui/visualization/sort_visualizer.obj
+
+# target to build an object file
+source/gui/visualization/sort_visualizer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.obj
+.PHONY : source/gui/visualization/sort_visualizer.cpp.obj
+
+source/gui/visualization/sort_visualizer.i: source/gui/visualization/sort_visualizer.cpp.i
+.PHONY : source/gui/visualization/sort_visualizer.i
+
+# target to preprocess a source file
+source/gui/visualization/sort_visualizer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.i
+.PHONY : source/gui/visualization/sort_visualizer.cpp.i
+
+source/gui/visualization/sort_visualizer.s: source/gui/visualization/sort_visualizer.cpp.s
+.PHONY : source/gui/visualization/sort_visualizer.s
+
+# target to generate assembly for a file
+source/gui/visualization/sort_visualizer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.s
+.PHONY : source/gui/visualization/sort_visualizer.cpp.s
+
+source/gui/widgets/disk_io_animator.obj: source/gui/widgets/disk_io_animator.cpp.obj
+.PHONY : source/gui/widgets/disk_io_animator.obj
+
+# target to build an object file
+source/gui/widgets/disk_io_animator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.obj
+.PHONY : source/gui/widgets/disk_io_animator.cpp.obj
+
+source/gui/widgets/disk_io_animator.i: source/gui/widgets/disk_io_animator.cpp.i
+.PHONY : source/gui/widgets/disk_io_animator.i
+
+# target to preprocess a source file
+source/gui/widgets/disk_io_animator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.i
+.PHONY : source/gui/widgets/disk_io_animator.cpp.i
+
+source/gui/widgets/disk_io_animator.s: source/gui/widgets/disk_io_animator.cpp.s
+.PHONY : source/gui/widgets/disk_io_animator.s
+
+# target to generate assembly for a file
+source/gui/widgets/disk_io_animator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.s
+.PHONY : source/gui/widgets/disk_io_animator.cpp.s
+
+source/gui/widgets/merge_heap_widget.obj: source/gui/widgets/merge_heap_widget.cpp.obj
+.PHONY : source/gui/widgets/merge_heap_widget.obj
+
+# target to build an object file
+source/gui/widgets/merge_heap_widget.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.obj
+.PHONY : source/gui/widgets/merge_heap_widget.cpp.obj
+
+source/gui/widgets/merge_heap_widget.i: source/gui/widgets/merge_heap_widget.cpp.i
+.PHONY : source/gui/widgets/merge_heap_widget.i
+
+# target to preprocess a source file
+source/gui/widgets/merge_heap_widget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.i
+.PHONY : source/gui/widgets/merge_heap_widget.cpp.i
+
+source/gui/widgets/merge_heap_widget.s: source/gui/widgets/merge_heap_widget.cpp.s
+.PHONY : source/gui/widgets/merge_heap_widget.s
+
+# target to generate assembly for a file
+source/gui/widgets/merge_heap_widget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.s
+.PHONY : source/gui/widgets/merge_heap_widget.cpp.s
+
+source/gui/widgets/timeline_scrubber.obj: source/gui/widgets/timeline_scrubber.cpp.obj
+.PHONY : source/gui/widgets/timeline_scrubber.obj
+
+# target to build an object file
+source/gui/widgets/timeline_scrubber.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.obj
+.PHONY : source/gui/widgets/timeline_scrubber.cpp.obj
+
+source/gui/widgets/timeline_scrubber.i: source/gui/widgets/timeline_scrubber.cpp.i
+.PHONY : source/gui/widgets/timeline_scrubber.i
+
+# target to preprocess a source file
+source/gui/widgets/timeline_scrubber.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.i
+.PHONY : source/gui/widgets/timeline_scrubber.cpp.i
+
+source/gui/widgets/timeline_scrubber.s: source/gui/widgets/timeline_scrubber.cpp.s
+.PHONY : source/gui/widgets/timeline_scrubber.s
+
+# target to generate assembly for a file
+source/gui/widgets/timeline_scrubber.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\external_sort.dir\build.make CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.s
+.PHONY : source/gui/widgets/timeline_scrubber.cpp.s
 
 source/main.obj: source/main.cpp.obj
 .PHONY : source/main.obj
@@ -476,6 +644,9 @@ help:
 	@echo ... base_lib
 	@echo ... external_sort
 	@echo ... read_inp_outp
+	@echo ... external_sort_autogen/72ZSY5ZTOK/qrc_resources.obj
+	@echo ... external_sort_autogen/72ZSY5ZTOK/qrc_resources.i
+	@echo ... external_sort_autogen/72ZSY5ZTOK/qrc_resources.s
 	@echo ... external_sort_autogen/mocs_compilation.obj
 	@echo ... external_sort_autogen/mocs_compilation.i
 	@echo ... external_sort_autogen/mocs_compilation.s
@@ -491,9 +662,27 @@ help:
 	@echo ... source/base/external_sort.obj
 	@echo ... source/base/external_sort.i
 	@echo ... source/base/external_sort.s
+	@echo ... source/gui/animation/animation_controller.obj
+	@echo ... source/gui/animation/animation_controller.i
+	@echo ... source/gui/animation/animation_controller.s
 	@echo ... source/gui/main_window.obj
 	@echo ... source/gui/main_window.i
 	@echo ... source/gui/main_window.s
+	@echo ... source/gui/visualization/external_sort_canvas.obj
+	@echo ... source/gui/visualization/external_sort_canvas.i
+	@echo ... source/gui/visualization/external_sort_canvas.s
+	@echo ... source/gui/visualization/sort_visualizer.obj
+	@echo ... source/gui/visualization/sort_visualizer.i
+	@echo ... source/gui/visualization/sort_visualizer.s
+	@echo ... source/gui/widgets/disk_io_animator.obj
+	@echo ... source/gui/widgets/disk_io_animator.i
+	@echo ... source/gui/widgets/disk_io_animator.s
+	@echo ... source/gui/widgets/merge_heap_widget.obj
+	@echo ... source/gui/widgets/merge_heap_widget.i
+	@echo ... source/gui/widgets/merge_heap_widget.s
+	@echo ... source/gui/widgets/timeline_scrubber.obj
+	@echo ... source/gui/widgets/timeline_scrubber.i
+	@echo ... source/gui/widgets/timeline_scrubber.s
 	@echo ... source/main.obj
 	@echo ... source/main.i
 	@echo ... source/main.s

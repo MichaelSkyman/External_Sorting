@@ -5,8 +5,8 @@ void AppConfig::setInputFile(const std::string& path) {
     inputFile = path;
 }
 
-void AppConfig::setOutputFile(const std::string& path) {
-    outputFile = path;
+void AppConfig::setOutputDir(const std::string& path) {
+    outputDir = path;
 }
 
 void AppConfig::setChunkMode(ChunkMode mode) {
@@ -21,8 +21,8 @@ std::string AppConfig::getInputFile() const {
     return inputFile;
 }
 
-std::string AppConfig::getOutputFile() const {
-    return outputFile;
+std::string AppConfig::getOutputDir() const {
+    return outputDir;
 }
 
 size_t AppConfig::getChunkSize() const {

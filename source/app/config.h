@@ -9,19 +9,19 @@ enum class ChunkMode {
 class AppConfig {
 public:
     void setInputFile(const std::string& path);
-    void setOutputFile(const std::string& path);
+    void setOutputDir(const std::string& path);
 
     void setChunkMode(ChunkMode mode);
     void setManualChunkSize(size_t size);
 
     std::string getInputFile() const;
-    std::string getOutputFile() const;
+    std::string getOutputDir() const;
 
     size_t getChunkSize() const;
 
 private:
     std::string inputFile;
-    std::string outputFile;
+    std::string outputDir;
 
     ChunkMode chunkMode = ChunkMode::AUTO;
     size_t manualChunkSize = 0;

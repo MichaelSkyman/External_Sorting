@@ -75,11 +75,53 @@ external_sort_autogen/timestamp: CMakeFiles/external_sort.dir/compiler_depend.ts
 	C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/external_sort_autogen.dir/AutogenInfo.json Debug
 	C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/external_sort_autogen/timestamp
 
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/resources.qrc
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: CMakeFiles/external_sort_autogen.dir/AutoRcc_resources_72ZSY5ZTOK_Info.json
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/font_schem.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/about_pageAsset\ 96.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/bug_fullscreen.PNG
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/homepage.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/android_game.PNG
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/dialogerro.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/widget_2.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/widget3.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/about_full_screen.PNG
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/home_full_screen.PNG
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/layout_infoAsset100.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/android1.PNG
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/buttons.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/cloud1.PNG
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/android.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/home1.PNG
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/color_scheme.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/homeDetailed.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/bug1.PNG
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/layout_Asset_97.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/about_home.PNG
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/contact_uiAsset\ 114.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/layout_bug_oriAsset\ 104.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/contact_layoutAsset\ 116.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/frontpageAsset1.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/layout_bugAsset\ 103.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/layout_homeAsset\ 101.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/android_pageAsset\ 112.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/layout_home_oriAsset\ 102.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/android_ori_pageAsset\ 113.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/mainwindowAsset\ 110.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/layout_cloud_oriAsset\ 108.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/layout_cloud_Asset\ 107.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/images/Layout/aa_new_homeAsset_118.png
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/External_Sorting/source/gui/style/css.qss
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/Qt/6.10.2/mingw_64/bin/rcc.exe
+external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp: C:/Qt/6.10.2/mingw_64/bin/rcc.exe
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for source/gui/resources.qrc"
+	C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/external_sort_autogen.dir/AutoRcc_resources_72ZSY5ZTOK_Info.json Debug
+
 CMakeFiles/external_sort.dir/external_sort_autogen/mocs_compilation.cpp.obj: CMakeFiles/external_sort.dir/flags.make
 CMakeFiles/external_sort.dir/external_sort_autogen/mocs_compilation.cpp.obj: CMakeFiles/external_sort.dir/includes_CXX.rsp
 CMakeFiles/external_sort.dir/external_sort_autogen/mocs_compilation.cpp.obj: external_sort_autogen/mocs_compilation.cpp
 CMakeFiles/external_sort.dir/external_sort_autogen/mocs_compilation.cpp.obj: CMakeFiles/external_sort.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/external_sort.dir/external_sort_autogen/mocs_compilation.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/external_sort.dir/external_sort_autogen/mocs_compilation.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/external_sort.dir/external_sort_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\external_sort.dir\external_sort_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\external_sort.dir\external_sort_autogen\mocs_compilation.cpp.obj -c C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\external_sort_autogen\mocs_compilation.cpp
 
 CMakeFiles/external_sort.dir/external_sort_autogen/mocs_compilation.cpp.i: cmake_force
@@ -94,7 +136,7 @@ CMakeFiles/external_sort.dir/source/main.cpp.obj: CMakeFiles/external_sort.dir/f
 CMakeFiles/external_sort.dir/source/main.cpp.obj: CMakeFiles/external_sort.dir/includes_CXX.rsp
 CMakeFiles/external_sort.dir/source/main.cpp.obj: C:/External_Sorting/source/main.cpp
 CMakeFiles/external_sort.dir/source/main.cpp.obj: CMakeFiles/external_sort.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/external_sort.dir/source/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/external_sort.dir/source/main.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/external_sort.dir/source/main.cpp.obj -MF CMakeFiles\external_sort.dir\source\main.cpp.obj.d -o CMakeFiles\external_sort.dir\source\main.cpp.obj -c C:\External_Sorting\source\main.cpp
 
 CMakeFiles/external_sort.dir/source/main.cpp.i: cmake_force
@@ -109,7 +151,7 @@ CMakeFiles/external_sort.dir/source/gui/main_window.cpp.obj: CMakeFiles/external
 CMakeFiles/external_sort.dir/source/gui/main_window.cpp.obj: CMakeFiles/external_sort.dir/includes_CXX.rsp
 CMakeFiles/external_sort.dir/source/gui/main_window.cpp.obj: C:/External_Sorting/source/gui/main_window.cpp
 CMakeFiles/external_sort.dir/source/gui/main_window.cpp.obj: CMakeFiles/external_sort.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/external_sort.dir/source/gui/main_window.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/external_sort.dir/source/gui/main_window.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/external_sort.dir/source/gui/main_window.cpp.obj -MF CMakeFiles\external_sort.dir\source\gui\main_window.cpp.obj.d -o CMakeFiles\external_sort.dir\source\gui\main_window.cpp.obj -c C:\External_Sorting\source\gui\main_window.cpp
 
 CMakeFiles/external_sort.dir/source/gui/main_window.cpp.i: cmake_force
@@ -120,11 +162,123 @@ CMakeFiles/external_sort.dir/source/gui/main_window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/external_sort.dir/source/gui/main_window.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\External_Sorting\source\gui\main_window.cpp -o CMakeFiles\external_sort.dir\source\gui\main_window.cpp.s
 
+CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.obj: CMakeFiles/external_sort.dir/flags.make
+CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.obj: CMakeFiles/external_sort.dir/includes_CXX.rsp
+CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.obj: C:/External_Sorting/source/gui/animation/animation_controller.cpp
+CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.obj: CMakeFiles/external_sort.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.obj -MF CMakeFiles\external_sort.dir\source\gui\animation\animation_controller.cpp.obj.d -o CMakeFiles\external_sort.dir\source\gui\animation\animation_controller.cpp.obj -c C:\External_Sorting\source\gui\animation\animation_controller.cpp
+
+CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\External_Sorting\source\gui\animation\animation_controller.cpp > CMakeFiles\external_sort.dir\source\gui\animation\animation_controller.cpp.i
+
+CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\External_Sorting\source\gui\animation\animation_controller.cpp -o CMakeFiles\external_sort.dir\source\gui\animation\animation_controller.cpp.s
+
+CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.obj: CMakeFiles/external_sort.dir/flags.make
+CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.obj: CMakeFiles/external_sort.dir/includes_CXX.rsp
+CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.obj: C:/External_Sorting/source/gui/visualization/sort_visualizer.cpp
+CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.obj: CMakeFiles/external_sort.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.obj -MF CMakeFiles\external_sort.dir\source\gui\visualization\sort_visualizer.cpp.obj.d -o CMakeFiles\external_sort.dir\source\gui\visualization\sort_visualizer.cpp.obj -c C:\External_Sorting\source\gui\visualization\sort_visualizer.cpp
+
+CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\External_Sorting\source\gui\visualization\sort_visualizer.cpp > CMakeFiles\external_sort.dir\source\gui\visualization\sort_visualizer.cpp.i
+
+CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\External_Sorting\source\gui\visualization\sort_visualizer.cpp -o CMakeFiles\external_sort.dir\source\gui\visualization\sort_visualizer.cpp.s
+
+CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.obj: CMakeFiles/external_sort.dir/flags.make
+CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.obj: CMakeFiles/external_sort.dir/includes_CXX.rsp
+CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.obj: C:/External_Sorting/source/gui/visualization/external_sort_canvas.cpp
+CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.obj: CMakeFiles/external_sort.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.obj -MF CMakeFiles\external_sort.dir\source\gui\visualization\external_sort_canvas.cpp.obj.d -o CMakeFiles\external_sort.dir\source\gui\visualization\external_sort_canvas.cpp.obj -c C:\External_Sorting\source\gui\visualization\external_sort_canvas.cpp
+
+CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\External_Sorting\source\gui\visualization\external_sort_canvas.cpp > CMakeFiles\external_sort.dir\source\gui\visualization\external_sort_canvas.cpp.i
+
+CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\External_Sorting\source\gui\visualization\external_sort_canvas.cpp -o CMakeFiles\external_sort.dir\source\gui\visualization\external_sort_canvas.cpp.s
+
+CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.obj: CMakeFiles/external_sort.dir/flags.make
+CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.obj: CMakeFiles/external_sort.dir/includes_CXX.rsp
+CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.obj: C:/External_Sorting/source/gui/widgets/timeline_scrubber.cpp
+CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.obj: CMakeFiles/external_sort.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.obj -MF CMakeFiles\external_sort.dir\source\gui\widgets\timeline_scrubber.cpp.obj.d -o CMakeFiles\external_sort.dir\source\gui\widgets\timeline_scrubber.cpp.obj -c C:\External_Sorting\source\gui\widgets\timeline_scrubber.cpp
+
+CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\External_Sorting\source\gui\widgets\timeline_scrubber.cpp > CMakeFiles\external_sort.dir\source\gui\widgets\timeline_scrubber.cpp.i
+
+CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\External_Sorting\source\gui\widgets\timeline_scrubber.cpp -o CMakeFiles\external_sort.dir\source\gui\widgets\timeline_scrubber.cpp.s
+
+CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.obj: CMakeFiles/external_sort.dir/flags.make
+CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.obj: CMakeFiles/external_sort.dir/includes_CXX.rsp
+CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.obj: C:/External_Sorting/source/gui/widgets/merge_heap_widget.cpp
+CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.obj: CMakeFiles/external_sort.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.obj -MF CMakeFiles\external_sort.dir\source\gui\widgets\merge_heap_widget.cpp.obj.d -o CMakeFiles\external_sort.dir\source\gui\widgets\merge_heap_widget.cpp.obj -c C:\External_Sorting\source\gui\widgets\merge_heap_widget.cpp
+
+CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\External_Sorting\source\gui\widgets\merge_heap_widget.cpp > CMakeFiles\external_sort.dir\source\gui\widgets\merge_heap_widget.cpp.i
+
+CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\External_Sorting\source\gui\widgets\merge_heap_widget.cpp -o CMakeFiles\external_sort.dir\source\gui\widgets\merge_heap_widget.cpp.s
+
+CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.obj: CMakeFiles/external_sort.dir/flags.make
+CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.obj: CMakeFiles/external_sort.dir/includes_CXX.rsp
+CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.obj: C:/External_Sorting/source/gui/widgets/disk_io_animator.cpp
+CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.obj: CMakeFiles/external_sort.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.obj -MF CMakeFiles\external_sort.dir\source\gui\widgets\disk_io_animator.cpp.obj.d -o CMakeFiles\external_sort.dir\source\gui\widgets\disk_io_animator.cpp.obj -c C:\External_Sorting\source\gui\widgets\disk_io_animator.cpp
+
+CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\External_Sorting\source\gui\widgets\disk_io_animator.cpp > CMakeFiles\external_sort.dir\source\gui\widgets\disk_io_animator.cpp.i
+
+CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\External_Sorting\source\gui\widgets\disk_io_animator.cpp -o CMakeFiles\external_sort.dir\source\gui\widgets\disk_io_animator.cpp.s
+
+CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj: CMakeFiles/external_sort.dir/flags.make
+CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj: CMakeFiles/external_sort.dir/includes_CXX.rsp
+CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj: external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp
+CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj: CMakeFiles/external_sort.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj -MF CMakeFiles\external_sort.dir\external_sort_autogen\72ZSY5ZTOK\qrc_resources.cpp.obj.d -o CMakeFiles\external_sort.dir\external_sort_autogen\72ZSY5ZTOK\qrc_resources.cpp.obj -c C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\external_sort_autogen\72ZSY5ZTOK\qrc_resources.cpp
+
+CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\external_sort_autogen\72ZSY5ZTOK\qrc_resources.cpp > CMakeFiles\external_sort.dir\external_sort_autogen\72ZSY5ZTOK\qrc_resources.cpp.i
+
+CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\external_sort_autogen\72ZSY5ZTOK\qrc_resources.cpp -o CMakeFiles\external_sort.dir\external_sort_autogen\72ZSY5ZTOK\qrc_resources.cpp.s
+
 # Object files for target external_sort
 external_sort_OBJECTS = \
 "CMakeFiles/external_sort.dir/external_sort_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/external_sort.dir/source/main.cpp.obj" \
-"CMakeFiles/external_sort.dir/source/gui/main_window.cpp.obj"
+"CMakeFiles/external_sort.dir/source/gui/main_window.cpp.obj" \
+"CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.obj" \
+"CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.obj" \
+"CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.obj" \
+"CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.obj" \
+"CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.obj" \
+"CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.obj" \
+"CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj"
 
 # External object files for target external_sort
 external_sort_EXTERNAL_OBJECTS =
@@ -132,6 +286,13 @@ external_sort_EXTERNAL_OBJECTS =
 bin/external_sort.exe: CMakeFiles/external_sort.dir/external_sort_autogen/mocs_compilation.cpp.obj
 bin/external_sort.exe: CMakeFiles/external_sort.dir/source/main.cpp.obj
 bin/external_sort.exe: CMakeFiles/external_sort.dir/source/gui/main_window.cpp.obj
+bin/external_sort.exe: CMakeFiles/external_sort.dir/source/gui/animation/animation_controller.cpp.obj
+bin/external_sort.exe: CMakeFiles/external_sort.dir/source/gui/visualization/sort_visualizer.cpp.obj
+bin/external_sort.exe: CMakeFiles/external_sort.dir/source/gui/visualization/external_sort_canvas.cpp.obj
+bin/external_sort.exe: CMakeFiles/external_sort.dir/source/gui/widgets/timeline_scrubber.cpp.obj
+bin/external_sort.exe: CMakeFiles/external_sort.dir/source/gui/widgets/merge_heap_widget.cpp.obj
+bin/external_sort.exe: CMakeFiles/external_sort.dir/source/gui/widgets/disk_io_animator.cpp.obj
+bin/external_sort.exe: CMakeFiles/external_sort.dir/external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp.obj
 bin/external_sort.exe: CMakeFiles/external_sort.dir/build.make
 bin/external_sort.exe: C:/Qt/6.10.2/mingw_64/lib/libQt6Widgets.a
 bin/external_sort.exe: lib/libapp_lib.a
@@ -141,7 +302,7 @@ bin/external_sort.exe: lib/libbase_lib.a
 bin/external_sort.exe: CMakeFiles/external_sort.dir/linkLibs.rsp
 bin/external_sort.exe: CMakeFiles/external_sort.dir/objects1.rsp
 bin/external_sort.exe: CMakeFiles/external_sort.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin\external_sort.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable bin\external_sort.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\external_sort.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -152,6 +313,7 @@ CMakeFiles/external_sort.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles\external_sort.dir\cmake_clean.cmake
 .PHONY : CMakeFiles/external_sort.dir/clean
 
+CMakeFiles/external_sort.dir/depend: external_sort_autogen/72ZSY5ZTOK/qrc_resources.cpp
 CMakeFiles/external_sort.dir/depend: external_sort_autogen/timestamp
 	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\External_Sorting C:\External_Sorting C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug C:\External_Sorting\build\Desktop_Qt_6_10_2_MinGW_64_bit-Debug\CMakeFiles\external_sort.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/external_sort.dir/depend

@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/assets">
+        <file>images/about_home.PNG</file>
+        <file>images/about_pageAsset 96.png</file>
+        <file>images/android.png</file>
+        <file>images/android_game.PNG</file>
+        <file>images/android1.PNG</file>
+        <file>images/bug_fullscreen.PNG</file>
+        <file>images/bug1.PNG</file>
+        <file>images/buttons.png</file>
+        <file>images/cloud1.PNG</file>
+        <file>images/color_scheme.png</file>
+        <file>images/dialogerro.png</file>
+        <file>images/font_schem.png</file>
+        <file>images/home1.PNG</file>
+        <file>images/homeDetailed.png</file>
+        <file>images/homepage.png</file>
+        <file>images/layout_Asset_97.png</file>
+        <file>images/widget_2.png</file>
+        <file>images/widget3.png</file>
+        <file>images/Layout/android_ori_pageAsset 113.png</file>
+        <file>images/Layout/android_pageAsset 112.png</file>
+        <file>images/Layout/contact_layoutAsset 116.png</file>
+        <file>images/Layout/contact_uiAsset 114.png</file>
+        <file>images/Layout/layout_bug_oriAsset 104.png</file>
+        <file>images/Layout/layout_bugAsset 103.png</file>
+        <file>images/Layout/layout_cloud_Asset 107.png</file>
+        <file>images/Layout/layout_cloud_oriAsset 108.png</file>
+        <file>images/Layout/layout_home_oriAsset 102.png</file>
+        <file>images/Layout/layout_homeAsset 101.png</file>
+        <file>images/Layout/mainwindowAsset 110.png</file>
+        <file>style/css.qss</file>
+        <file>images/about_full_screen.PNG</file>
+        <file>images/home_full_screen.PNG</file>
+        <file>images/layout_infoAsset100.png</file>
+        <file>images/Layout/aa_new_homeAsset_118.png</file>
+        <file>images/Layout/frontpageAsset1.png</file>
+    </qresource>
+</RCC>

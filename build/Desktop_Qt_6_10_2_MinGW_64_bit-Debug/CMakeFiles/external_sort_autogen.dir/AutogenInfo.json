@@ -314,7 +314,8 @@
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
-		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake"
+		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"C:/External_Sorting/source/gui/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/External_Sorting",
 	"CROSS_CONFIG" : false,
@@ -323,9 +324,87 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/External_Sorting/source/gui/animation/animation_clock.h",
+			"MU",
+			"SX7LHXRCTJ/moc_animation_clock.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/animation/animation_controller.h",
+			"MU",
+			"SX7LHXRCTJ/moc_animation_controller.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/animation/animation_step.h",
+			"MU",
+			"SX7LHXRCTJ/moc_animation_step.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/animation/animation_timer.h",
+			"MU",
+			"SX7LHXRCTJ/moc_animation_timer.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/animation/step_aggregator.h",
+			"MU",
+			"SX7LHXRCTJ/moc_step_aggregator.cpp",
+			null
+		],
+		[
 			"C:/External_Sorting/source/gui/main_window.h",
 			"MU",
 			"72ZSY5ZTOK/moc_main_window.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/visualization/external_sort_canvas.h",
+			"MU",
+			"KFJSBJZZLN/moc_external_sort_canvas.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/visualization/fullscreen_visualizer.h",
+			"MU",
+			"KFJSBJZZLN/moc_fullscreen_visualizer.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/visualization/memory_block.h",
+			"MU",
+			"KFJSBJZZLN/moc_memory_block.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/visualization/moving_block.h",
+			"MU",
+			"KFJSBJZZLN/moc_moving_block.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/visualization/sort_visualizer.h",
+			"MU",
+			"KFJSBJZZLN/moc_sort_visualizer.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/widgets/disk_io_animator.h",
+			"MU",
+			"5W5KC6S4CV/moc_disk_io_animator.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/widgets/merge_heap_widget.h",
+			"MU",
+			"5W5KC6S4CV/moc_merge_heap_widget.cpp",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/widgets/timeline_scrubber.h",
+			"MU",
+			"5W5KC6S4CV/moc_timeline_scrubber.cpp",
 			null
 		]
 	],
@@ -354,6 +433,11 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"C:/External_Sorting/source/gui",
+		"C:/External_Sorting/source/gui/animation",
+		"C:/External_Sorting/source/gui/visualization",
+		"C:/External_Sorting/source/gui/widgets",
+		"C:/External_Sorting/source",
 		"C:/External_Sorting/source/app",
 		"C:/External_Sorting/source/base",
 		"C:/Qt/6.10.2/mingw_64/include/QtWidgets",
@@ -401,7 +485,37 @@
 	"SETTINGS_FILE" : "C:/External_Sorting/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/external_sort_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/External_Sorting/source/gui/animation/animation_controller.cpp",
+			"MU",
+			null
+		],
 		[ "C:/External_Sorting/source/gui/main_window.cpp", "MU", null ],
+		[
+			"C:/External_Sorting/source/gui/visualization/external_sort_canvas.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/visualization/sort_visualizer.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/widgets/disk_io_animator.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/widgets/merge_heap_widget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/External_Sorting/source/gui/widgets/timeline_scrubber.cpp",
+			"MU",
+			null
+		],
 		[ "C:/External_Sorting/source/main.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.30.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.30.5/CMakeRCCompiler.cmake"
   "CMakeFiles/3.30.5/CMakeSystem.cmake"
+  "C:/External_Sorting/source/gui/resources.qrc"
   "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake"
   "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
   "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake"
@@ -206,6 +207,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/external_sort_autogen.dir/AutogenInfo.json"
+  "CMakeFiles/external_sort_autogen.dir/AutoRcc_resources_72ZSY5ZTOK_Info.json"
   "CMakeFiles/read_inp_outp_autogen.dir/AutogenInfo.json"
   ".qt/QtDeploySupport.cmake"
   ".qt/QtDeployTargets.cmake"

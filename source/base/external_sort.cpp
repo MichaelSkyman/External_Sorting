@@ -5,7 +5,17 @@
 #include <cstdio>
 
 ExternalSorter::ExternalSorter(size_t size)
-    : chunkSize(size) {}
+    : chunkSize(size), callback(nullptr) {}
+
+void ExternalSorter::notifyCallback(SortPhase phase, const std::vector<double>& data, int progress) {
+    if (callback) {
+        // Limit data size for visualization (show first 20 elements)
+        std::vector<double> displayData;
+        size_t limit = std::min(data.size(), size_t(20));
+        displayData.assign(data.begin(), data.begin() + limit);
+        callback(phase, displayData, progress);
+    }
+}
 
 std::vector<std::string> ExternalSorter::SplitandSort(const std::string& inputFile) {
     std::vector<std::string> chunkFiles;
@@ -22,11 +32,14 @@ std::vector<std::string> ExternalSorter::SplitandSort(const std::string& inputFi
     while (in.read(reinterpret_cast<char*>(&number), sizeof(double))) {
         buffer.push_back(number);
         if (buffer.size() == chunkSize) {
+            notifyCallback(SortPhase::READ, buffer, static_cast<int>(chunkIndex * 10));
             std::sort(buffer.begin(), buffer.end());
+            notifyCallback(SortPhase::SORT, buffer, static_cast<int>(chunkIndex * 10 + 5));
             std::string chunkFile = "chunk_" + std::to_string(chunkIndex++) + ".bin";
             std::ofstream out(chunkFile, std::ios::binary);
             out.write(reinterpret_cast<const char*>(buffer.data()), buffer.size() * sizeof(double));
             out.close();
+            notifyCallback(SortPhase::WRITE, buffer, static_cast<int>(chunkIndex * 10));
             chunkFiles.push_back(chunkFile);
             buffer.clear();
         }
@@ -34,11 +47,14 @@ std::vector<std::string> ExternalSorter::SplitandSort(const std::string& inputFi
 
     // Handle remaining numbers
     if (!buffer.empty()) {
+        notifyCallback(SortPhase::READ, buffer, 80);
         std::sort(buffer.begin(), buffer.end());
+        notifyCallback(SortPhase::SORT, buffer, 85);
         std::string chunkFile = "chunk_" + std::to_string(chunkIndex++) + ".bin";
         std::ofstream out(chunkFile, std::ios::binary);
         out.write(reinterpret_cast<const char*>(buffer.data()), buffer.size() * sizeof(double));
         out.close();
+        notifyCallback(SortPhase::WRITE, buffer, 90);
         chunkFiles.push_back(chunkFile);
     }
 

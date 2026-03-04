@@ -12,6 +12,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 add_library(base_lib STATIC
     source/base/external_sort.cpp
     source/base/external_sort.h
+    source/base/binary_stream_writer.h
 )
 target_include_directories(base_lib PUBLIC
     ${CMAKE_SOURCE_DIR}/source/base
@@ -40,11 +41,45 @@ add_executable(external_sort
     source/gui/main_window.cpp
     source/gui/main_window.h
     source/gui/mainwindow.ui
+    source/gui/resources.qrc
+    
+    # Animation module
+    source/gui/animation/animation_step.h
+    source/gui/animation/animation_timer.h
+    source/gui/animation/animation_controller.h
+    source/gui/animation/animation_controller.cpp
+    source/gui/animation/animation_clock.h
+    source/gui/animation/step_aggregator.h
+    
+    # Visualization module
+    source/gui/visualization/memory_block.h
+    source/gui/visualization/moving_block.h
+    source/gui/visualization/sort_visualizer.h
+    source/gui/visualization/sort_visualizer.cpp
+    source/gui/visualization/external_sort_canvas.h
+    source/gui/visualization/external_sort_canvas.cpp
+    source/gui/visualization/fullscreen_visualizer.h
+    
+    # Widgets module
+    source/gui/widgets/timeline_scrubber.h
+    source/gui/widgets/timeline_scrubber.cpp
+    source/gui/widgets/merge_heap_widget.h
+    source/gui/widgets/merge_heap_widget.cpp
+    source/gui/widgets/disk_io_animator.h
+    source/gui/widgets/disk_io_animator.cpp
 )
 
 target_link_libraries(external_sort PRIVATE
     Qt6::Widgets
     app_lib
+)
+
+target_include_directories(external_sort PRIVATE
+    ${CMAKE_SOURCE_DIR}/source/gui
+    ${CMAKE_SOURCE_DIR}/source/gui/animation
+    ${CMAKE_SOURCE_DIR}/source/gui/visualization
+    ${CMAKE_SOURCE_DIR}/source/gui/widgets
+    ${CMAKE_SOURCE_DIR}/source
 )
 
 # ================= Tool =================
