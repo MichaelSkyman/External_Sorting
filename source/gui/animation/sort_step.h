@@ -1,27 +1,16 @@
-﻿#pragma once
+#pragma once
 #include <QVector>
 
+/** @brief Basic operation type for a legacy sort step. */
 enum class StepType {
-    READ,
-    SORT,
-    WRITE,
-    MERGE,
-    COMPARE,
-    SWAP
+    READ,   ///< Block read from disk.
+    SORT,   ///< Block sorted in RAM.
+    WRITE,  ///< Block written to disk.
+    MERGE   ///< Blocks merged.
 };
 
+/** @brief A single step in the legacy (QGraphicsScene) sort animation pipeline. */
 struct SortStep {
-    StepType type;
-    QVector<double> data;
-    int progress;
-    bool inRAM;              // true = data in RAM, false = on disk
-    int highlightIdx1;       // index to highlight (for compare)
-    int highlightIdx2;       // second index to highlight
-    int mergeLeftIdx;        // merge arrow source left
-    int mergeRightIdx;       // merge arrow source right
-    int mergeTargetIdx;      // merge arrow target
-    QVector<int> runBoundaries; // boundaries of sorted runs
-    
-    SortStep() : progress(0), inRAM(true), highlightIdx1(-1), highlightIdx2(-1),
-                 mergeLeftIdx(-1), mergeRightIdx(-1), mergeTargetIdx(-1) {}
+    StepType     type; ///< The operation performed in this step.
+    QVector<int> data; ///< Data values associated with this step.
 };

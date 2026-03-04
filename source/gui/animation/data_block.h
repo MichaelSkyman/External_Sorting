@@ -1,38 +1,25 @@
-﻿#pragma once
-#include <QGraphicsObject>
+#pragma once
 #include <QGraphicsRectItem>
 #include <QGraphicsTextItem>
-#include <QColor>
 
-class DataBlock : public QGraphicsObject
+/**
+ * @brief A labeled rectangular graphics item representing a single data value.
+ *
+ * Renders as a colored rectangle with a numeric text label, used in the
+ * legacy QGraphicsScene-based animation view.
+ */
+class DataBlock : public QGraphicsRectItem
 {
-    Q_OBJECT
-    Q_PROPERTY(qreal barHeight READ barHeight WRITE setBarHeight)
-    Q_PROPERTY(QPointF pos READ pos WRITE setPos)
-    Q_PROPERTY(qreal opacity READ opacity WRITE setOpacity)
-
 public:
-    DataBlock(double value, QColor color = Qt::cyan, qreal height = 40.0, QGraphicsItem* parent = nullptr);
-    
-    QRectF boundingRect() const override;
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
-    
-    void setColor(const QColor& color);
-    void setHighlighted(bool highlighted);
-    void setWriteAnimation(bool writing);
-    
-    qreal barHeight() const { return m_height; }
-    void setBarHeight(qreal h);
-    
-    double value() const { return m_value; }
+    /// @brief Constructs a DataBlock displaying @p value.
+    /// @param value  Integer value rendered as the block's text label.
+    /// @param parent Optional parent graphics item.
+    DataBlock(int value, QGraphicsItem* parent = nullptr);
+
+    /// @brief Immediately moves the block to the scene position @p pos.
+    /// @param pos Target scene position.
+    void moveTo(QPointF pos);
 
 private:
-    double m_value;
-    QColor m_color;
-    QColor m_baseColor;
-    qreal m_height;
-    qreal m_width;
-    bool m_highlighted;
-    bool m_writing;
-    QString m_valueStr;
+    QGraphicsTextItem* text; ///< Text label showing the block's numeric value.
 };

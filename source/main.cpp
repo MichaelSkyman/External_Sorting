@@ -1,17 +1,28 @@
 #include <QApplication>
+#include <QFile>
 #include <QDebug>
 #include "gui/main_window.h"
 
 int main(int argc, char *argv[])
 {
-    qDebug() << "Application starting...";
     QApplication app(argc, argv);
-    qDebug() << "QApplication created";
+
+    QFile file(":/assets/style/css.qss");
+
+    if(file.open(QFile::ReadOnly))
+    {
+        QString style = file.readAll();
+        app.setStyleSheet(style);
+        file.close();
+        qDebug() << "CSS Loaded!";
+    }
+    else
+    {
+        qDebug() << "Cannot load CSS!";
+    }
 
     MainWindow w;
-    qDebug() << "MainWindow created";
     w.show();
-    qDebug() << "MainWindow shown";
 
     return app.exec();
 }
