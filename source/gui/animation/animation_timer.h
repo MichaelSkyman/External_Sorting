@@ -5,7 +5,12 @@
 #include <QElapsedTimer>
 #include <functional>
 
-// High-precision animation timer for smooth 60fps rendering
+/**
+ * @brief High-precision animation timer targeting a configurable frame rate.
+ *
+ * Wraps QTimer with Qt::PreciseTimer and emits a delta-time @c frame signal
+ * each tick to drive smooth interpolation in the animation pipeline.
+ */
 class AnimationTimer : public QObject
 {
     Q_OBJECT
@@ -32,15 +37,15 @@ public:
     
     bool isRunning() const { return running; }
     
-    // Get time since last frame in seconds (for interpolation)
+    /// @brief Returns the time elapsed since the last frame in seconds.
     double getDeltaTime() const { return deltaTime; }
-    
-    // Get elapsed time since start in seconds
+
+    /// @brief Returns the total time elapsed since start() was called, in seconds.
     double getElapsedTime() const {
         return elapsedTimer.elapsed() / 1000.0;
     }
     
-    // Get current frame number
+    /// @brief Returns the total number of frames emitted since start().
     qint64 getFrameCount() const { return frameCount; }
 
 public slots:
@@ -78,11 +83,11 @@ public slots:
     }
 
 signals:
-    void frame(double deltaTime);  // Emitted each frame with delta time
-    void started();
-    void stopped();
-    void paused();
-    void resumed();
+    void frame(double deltaTime); ///< Emitted each frame with the delta time in seconds.
+    void started();               ///< Emitted when the timer starts.
+    void stopped();               ///< Emitted when the timer stops.
+    void paused();                ///< Emitted when the timer is paused.
+    void resumed();               ///< Emitted when the timer is resumed.
 
 private slots:
     void onFrame() {

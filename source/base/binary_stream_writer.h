@@ -28,11 +28,11 @@ public:
 
     ~BinaryStreamWriter() { close(); }
 
-    // Non-copyable
+    /// @note Non-copyable – each instance holds exclusive ownership of the file stream.
     BinaryStreamWriter(const BinaryStreamWriter&) = delete;
     BinaryStreamWriter& operator=(const BinaryStreamWriter&) = delete;
 
-    // Movable
+    /// @note Movable via move constructor and move-assignment operator.
     BinaryStreamWriter(BinaryStreamWriter&&) = default;
     BinaryStreamWriter& operator=(BinaryStreamWriter&&) = default;
 
@@ -58,8 +58,6 @@ public:
     /// Return the file path being written to.
     const std::string& filePath() const { return path_; }
 
-    // ----- static helpers -----
-
     /**
      * Given a directory, resolve the output file path.
      * Default: dir/output.bin
@@ -84,8 +82,6 @@ public:
         }
         throw std::runtime_error("BinaryStreamWriter: too many output versions in " + dir);
     }
-
-    // ----- static reader helpers -----
 
     /**
      * Read all int32 values from a binary file into a vector<int32_t>.

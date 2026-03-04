@@ -5,72 +5,55 @@
 #include <QString>
 #include <QVariant>
 
-// Step types for the animation pipeline
+/** @brief Step types for the animation pipeline. */
 enum class StepType {
-    // Introduction sequence
-    IntroDisk,          // Show disk storage visualization
-    HighlightRAM,       // Highlight RAM area
-    ShowArrow,          // Animate arrow from disk to RAM
-    
-    // Data movement
-    LoadToRAM,          // Load block from disk to RAM
-    WriteToRun,         // Write sorted data to run file
-    WriteOutput,        // Write final merged output
-    
-    // Sorting operations
-    SortBlock,          // Sort block in RAM
-    CompareElements,    // Highlight comparison
-    SwapElements,       // Animate swap
-    
-    // Merge operations
-    MergeStart,         // Begin merge phase
-    MergeStep,          // Single merge comparison
-    MergeComplete,      // Merge finished
-    
-    // Control
-    Pause,              // Pause for user understanding
-    CameraFocus,        // Move camera/viewport
-    ZoomRAM,            // Zoom effect on RAM
-    
-    // Status updates
-    StatusUpdate,       // Update status text
-    PhaseTransition     // Major phase change
+    IntroDisk,         ///< Show disk storage visualization during intro.
+    HighlightRAM,      ///< Highlight the RAM buffer area.
+    ShowArrow,         ///< Animate an arrow from disk to RAM.
+    LoadToRAM,         ///< Load a block from disk into RAM.
+    WriteToRun,        ///< Write a sorted block to a run file on disk.
+    WriteOutput,       ///< Write a final merged element to the output file.
+    SortBlock,         ///< Sort a block in RAM.
+    CompareElements,   ///< Highlight a comparison between two elements.
+    SwapElements,      ///< Animate a swap of two elements.
+    MergeStart,        ///< Begin the merge phase.
+    MergeStep,         ///< Single k-way merge comparison step.
+    MergeComplete,     ///< All runs have been fully merged.
+    Pause,             ///< Pause playback for user comprehension.
+    CameraFocus,       ///< Shift the camera/viewport focus point.
+    ZoomRAM,           ///< Apply a zoom effect on the RAM area.
+    StatusUpdate,      ///< Update the status text in the UI.
+    PhaseTransition    ///< Major phase transition (e.g., Sort → Merge).
 };
 
-// Represents a single animation step
+/** @brief Represents a single step in the animation pipeline. */
 struct AnimationStep {
-    StepType type = StepType::Pause;
+    StepType type = StepType::Pause; ///< The operation this step performs.
+
+    QVector<double> values;  ///< Data values involved in this step.
+    QVector<int>    indices; ///< Element indices involved (e.g., for highlights/comparisons).
+
+    QPointF sourcePos; ///< Starting position for movement animations.
+    QPointF targetPos; ///< Target position for movement animations.
+
+    int blockIndex = -1; ///< Index of the primary block affected (-1 = none).
+    int runIndex   = -1; ///< Index of the run file (-1 = none).
+    int progress   = 0;  ///< Overall progress percentage (0–100).
+
+    int durationMs   = 500; ///< Duration of this step in milliseconds.
+    int delayAfterMs = 0;   ///< Extra delay appended after the step completes.
+
+    QString statusText; ///< Primary status message shown in the UI.
+    QString detailText; ///< Additional detail text (optional).
+
+    bool inRAM       = false; ///< True if the data is currently in RAM.
+    bool highlighted = false; ///< True if this step should render highlighted.
+    bool isAutoPause = false; ///< True if this pause was auto-inserted by the controller.
+
+    QVariant customData; ///< Step-type-specific auxiliary data.
     
-    // Data for the step
-    QVector<double> values;         // Data values involved
-    QVector<int> indices;           // Indices involved (for highlights)
-    
-    // Positions for movement animations
-    QPointF sourcePos;
-    QPointF targetPos;
-    
-    // Additional parameters
-    int blockIndex = -1;            // Which block is affected
-    int runIndex = -1;              // Which run file
-    int progress = 0;               // Progress percentage
-    
-    // Timing
-    int durationMs = 500;           // How long this step takes
-    int delayAfterMs = 0;           // Delay after completion
-    
-    // Text/status
-    QString statusText;
-    QString detailText;
-    
-    // Flags
-    bool inRAM = false;             // Is data in RAM?
-    bool highlighted = false;       // Should be highlighted?
-    bool isAutoPause = false;       // Auto-inserted pause?
-    
-    // Custom data
-    QVariant customData;
-    
-    // Factory methods for common steps
+    /// @brief Factory methods for common animation steps
+    /// @{
     static AnimationStep createIntroDisk(const QVector<double>& data) {
         AnimationStep step;
         step.type = StepType::IntroDisk;
@@ -198,4 +181,5 @@ struct AnimationStep {
         step.durationMs = 400;
         return step;
     }
+    /// @}
 };

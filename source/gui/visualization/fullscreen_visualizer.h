@@ -46,38 +46,51 @@ public:
     explicit FullscreenVisualizer(QWidget* parent = nullptr);
     ~FullscreenVisualizer();
     
-    // Canvas access
+    /// @brief Returns the sort animation canvas.
     ExternalSortCanvas* canvas() const { return m_canvas; }
+    /// @brief Returns the animation engine driving the canvas.
     AnimationEngine* engine() const { return m_engine; }
+    /// @brief Returns the step aggregator batching raw algorithm operations.
     StepAggregator* aggregator() const { return m_aggregator; }
-    
-    // Data initialization
+
+    /// @brief Populates the canvas with data values and resets state.
     void setData(const QVector<double>& data);
+    /// @brief Clears all canvas state and resets playback.
     void clear();
-    
-    // Playback control
+
+    /// @brief Starts or resumes animation playback.
     void play();
+    /// @brief Pauses animation playback at the current step.
     void pause();
+    /// @brief Stops animation playback and resets to the first step.
     void stop();
+    /// @brief Advances playback by one step.
     void stepForward();
+    /// @brief Rewinds playback by one step.
     void stepBackward();
-    
-    // Speed control (0.1 - 10x)
+
+    /// @brief Sets the playback speed multiplier (range 0.1–10x).
     void setSpeed(double multiplier);
+    /// @brief Returns the current playback speed multiplier.
     double speed() const;
-    
-    // Progress
+
+    /// @brief Updates the progress indicator to @p current out of @p total steps.
     void setProgress(int current, int total);
+    /// @brief Returns the current step progress index.
     int progress() const;
-    
-    // Control bar visibility
+
+    /// @brief Shows the control bar and resets the auto-hide timer.
     void showControlBar();
+    /// @brief Hides the control bar immediately.
     void hideControlBar();
+    /// @brief Enables or disables automatic control bar hiding.
     void setAutoHideEnabled(bool enabled) { m_autoHideEnabled = enabled; }
+    /// @brief Returns true when automatic control bar hiding is active.
     bool autoHideEnabled() const { return m_autoHideEnabled; }
-    
-    // Control bar opacity for animations
+
+    /// @brief Returns the current control bar opacity (0–1).
     qreal controlBarOpacity() const { return m_controlBarOpacity; }
+    /// @brief Sets the control bar opacity for fade animations.
     void setControlBarOpacity(qreal opacity);
     
 signals:
@@ -108,42 +121,31 @@ private:
     void updateSpeedLabel();
     void updateStepLabel();
     
-    // Animation canvas (the star of the show)
-    ExternalSortCanvas* m_canvas = nullptr;
-    
-    // Animation engine
-    AnimationEngine* m_engine = nullptr;
-    
-    // Step aggregator
-    StepAggregator* m_aggregator = nullptr;
-    
-    // UI elements (minimal)
-    QWidget* m_controlBar = nullptr;
-    QProgressBar* m_progressBar = nullptr;
-    
-    // Control buttons
-    QToolButton* m_playPauseBtn = nullptr;
-    QToolButton* m_stepBackBtn = nullptr;
-    QToolButton* m_stepFwdBtn = nullptr;
-    QToolButton* m_backBtn = nullptr;
-    
-    // Speed control
-    QSlider* m_speedSlider = nullptr;
-    QLabel* m_speedLabel = nullptr;
-    
-    // Step counter
-    QLabel* m_stepLabel = nullptr;
-    
-    // Auto-hide timer for control bar
-    QTimer* m_autoHideTimer = nullptr;
-    bool m_autoHideEnabled = true;
-    qreal m_controlBarOpacity = 1.0;
-    QPropertyAnimation* m_controlBarAnim = nullptr;
-    
-    // State
-    bool m_isPlaying = false;
-    int m_currentStep = 0;
-    int m_totalSteps = 0;
+    ExternalSortCanvas* m_canvas     = nullptr; ///< The sort animation canvas.
+    AnimationEngine*    m_engine     = nullptr; ///< Animation engine driving the canvas.
+    StepAggregator*     m_aggregator = nullptr; ///< Step aggregator batching raw operations.
+
+    QWidget*      m_controlBar  = nullptr; ///< Control bar widget.
+    QProgressBar* m_progressBar = nullptr; ///< Overall sort progress bar.
+
+    QToolButton* m_playPauseBtn = nullptr; ///< Play/pause toggle button.
+    QToolButton* m_stepBackBtn  = nullptr; ///< Step-backward button.
+    QToolButton* m_stepFwdBtn   = nullptr; ///< Step-forward button.
+    QToolButton* m_backBtn      = nullptr; ///< Back-to-setup button.
+
+    QSlider* m_speedSlider = nullptr; ///< Speed control slider.
+    QLabel*  m_speedLabel  = nullptr; ///< Speed value label.
+
+    QLabel* m_stepLabel = nullptr; ///< Step counter label.
+
+    QTimer*             m_autoHideTimer    = nullptr; ///< Timer triggering control bar auto-hide.
+    bool                m_autoHideEnabled  = true;    ///< When true, control bar auto-hides.
+    qreal               m_controlBarOpacity = 1.0;   ///< Current control bar opacity (0–1).
+    QPropertyAnimation* m_controlBarAnim   = nullptr; ///< Fade animation for the control bar.
+
+    bool m_isPlaying   = false; ///< True while playback is in progress.
+    int  m_currentStep = 0;     ///< Current step index.
+    int  m_totalSteps  = 0;     ///< Total number of animation steps.
 };
 
 // ============================================================================

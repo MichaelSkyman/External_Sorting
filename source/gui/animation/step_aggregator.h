@@ -23,52 +23,49 @@
  *   50 swap operations → 1 "SortInRAM" animation step
  */
 
-// Raw algorithm operation (emitted by sorting thread)
+/** @brief A raw algorithm operation emitted by the sorting algorithm. */
 struct RawOperation {
+    /** @brief Operation types produced by the sorting algorithm. */
     enum class Type {
-        ReadBlock,          // Read block from disk
-        WriteBlock,         // Write block to disk
-        LoadToRAM,          // Load block into RAM
-        UnloadFromRAM,      // Remove block from RAM
-        Compare,            // Compare two values
-        Swap,               // Swap two values
-        CreateRun,          // Create new sorted run
-        MergeRead,          // Read from run during merge
-        MergeWrite,         // Write to output during merge
-        PhaseChange,        // Algorithm phase change
-        Complete            // Sorting complete
+        ReadBlock,     ///< Read a block from disk.
+        WriteBlock,    ///< Write a block to disk.
+        LoadToRAM,     ///< Load a block into RAM.
+        UnloadFromRAM, ///< Remove a block from RAM.
+        Compare,       ///< Compare two values.
+        Swap,          ///< Swap two values.
+        CreateRun,     ///< Create a new sorted run file.
+        MergeRead,     ///< Read from a run during merge.
+        MergeWrite,    ///< Write to output during merge.
+        PhaseChange,   ///< Algorithm phase change.
+        Complete       ///< Sorting is complete.
     };
     
-    Type type = Type::ReadBlock;
-    int blockIndex = -1;        // Primary block index
-    int secondIndex = -1;       // Secondary index (for swap/compare)
-    double value = 0.0;
-    QString metadata;           // Phase name, etc.
-    qint64 timestamp = 0;       // For ordering
+    Type    type        = Type::ReadBlock; ///< The type of raw operation.
+    int     blockIndex  = -1;              ///< Primary block index.
+    int     secondIndex = -1;              ///< Secondary index (for swap/compare).
+    double  value       = 0.0;             ///< Data value associated with this operation.
+    QString metadata;                      ///< Phase name or other metadata.
+    qint64  timestamp   = 0;               ///< Timestamp for operation ordering.
 };
 
-// Configuration for aggregation behavior
+/** @brief Configuration controlling how raw operations are grouped into visual steps. */
 struct AggregationConfig {
-    // How many raw operations to batch into one visual step
-    int maxOpsPerLoadStep = 50;     // Max blocks in one "LoadChunk" step
-    int maxOpsPerSortStep = 100;    // Max comparisons in one "Sort" step
-    int maxOpsPerMergeStep = 20;    // Max merge operations per step
-    
-    // Animation timing (base durations in ms)
-    double loadDuration = 300;
-    double sortDuration = 400;
-    double writeDuration = 250;
-    double mergeDuration = 350;
-    double phaseDuration = 1500;
-    
-    // Educational pacing multipliers
-    double introMultiplier = 2.0;   // Slower at start
-    double normalMultiplier = 1.0;
-    double fastMultiplier = 0.6;    // Faster later
-    
-    // At what step counts to change pace
-    int introPaceUntilStep = 20;
-    int normalPaceUntilStep = 100;
+    int maxOpsPerLoadStep  = 50;  ///< Maximum blocks batched into one LoadChunk step.
+    int maxOpsPerSortStep  = 100; ///< Maximum comparisons batched into one Sort step.
+    int maxOpsPerMergeStep = 20;  ///< Maximum merge operations batched into one MergeStep.
+
+    double loadDuration  = 300;  ///< Base display duration (ms) for a LoadChunk step.
+    double sortDuration  = 400;  ///< Base display duration (ms) for a Sort step.
+    double writeDuration = 250;  ///< Base display duration (ms) for a WriteRun step.
+    double mergeDuration = 350;  ///< Base display duration (ms) for a MergeStep.
+    double phaseDuration = 1500; ///< Base display duration (ms) for a PhaseTransition step.
+
+    double introMultiplier  = 2.0; ///< Pacing multiplier applied during the intro phase (slower).
+    double normalMultiplier = 1.0; ///< Pacing multiplier during normal operation.
+    double fastMultiplier   = 0.6; ///< Pacing multiplier during later steps (faster).
+
+    int introPaceUntilStep  = 20;  ///< Step count threshold where intro pacing ends.
+    int normalPaceUntilStep = 100; ///< Step count threshold where normal pacing ends.
 };
 
 class StepAggregator : public QObject
@@ -79,27 +76,31 @@ public:
     explicit StepAggregator(QObject* parent = nullptr);
     ~StepAggregator() = default;
     
-    // Configuration
+    /// @brief Sets the aggregation configuration.
     void setConfig(const AggregationConfig& config) { m_config = config; }
+    /// @brief Returns the current aggregation configuration.
     const AggregationConfig& config() const { return m_config; }
-    
-    // Input: raw algorithm operations
+
+    /// @brief Enqueues a single raw algorithm operation for aggregation.
     void addOperation(const RawOperation& op);
+    /// @brief Enqueues a batch of raw algorithm operations for aggregation.
     void addOperations(const QVector<RawOperation>& ops);
-    
-    // Processing
+
+    /// @brief Processes all pending raw operations into aggregated steps.
     void process();
+    /// @brief Clears all pending raw operations and aggregated output.
     void clear();
-    
-    // Output: aggregated visual steps
-    bool hasSteps() const { return !m_outputSteps.isEmpty(); }
-    AggregatedStep takeNextStep();
+
+    bool                    hasSteps()   const { return !m_outputSteps.isEmpty(); } ///< True if aggregated steps are available.
+    /// @brief Removes and returns the next aggregated step.
+    AggregatedStep          takeNextStep();
+    /// @brief Removes and returns all aggregated steps.
     QVector<AggregatedStep> takeAllSteps();
-    int stepCount() const { return m_outputSteps.size(); }
-    
-    // Statistics
-    int totalRawOps() const { return m_totalRawOps; }
-    int totalAggregatedSteps() const { return m_totalAggSteps; }
+    int                     stepCount()  const { return m_outputSteps.size(); } ///< Number of aggregated steps queued.
+
+    int    totalRawOps()          const { return m_totalRawOps; }  ///< Total raw operations ever enqueued.
+    int    totalAggregatedSteps() const { return m_totalAggSteps; } ///< Total aggregated steps ever produced.
+    /// @brief Returns the ratio of raw operations to aggregated steps.
     double aggregationRatio() const { 
         return m_totalAggSteps > 0 ? static_cast<double>(m_totalRawOps) / m_totalAggSteps : 0; 
     }
@@ -109,38 +110,32 @@ signals:
     void processingComplete();
 
 private:
-    // Aggregation methods for each phase
     void aggregateLoadPhase(int startIdx, int& endIdx);
     void aggregateSortPhase(int startIdx, int& endIdx);
     void aggregateWritePhase(int startIdx, int& endIdx);
     void aggregateMergePhase(int startIdx, int& endIdx);
     void aggregatePhaseTransition(int startIdx, int& endIdx);
-    
-    // Helper to create aggregated step with timing
+
     AggregatedStep createStep(AggregatedStep::Type type, 
                                const QVector<int>& sources,
                                const QVector<double>& values,
                                const QString& status,
                                double baseDuration);
     
-    // Get timing multiplier based on step count
+    /// @brief Returns the timing multiplier for the current step count.
     double getTimingMultiplier() const;
-    
-    AggregationConfig m_config;
-    
-    // Input buffer
-    QVector<RawOperation> m_rawOps;
-    int m_processedIdx = 0;
-    
-    // Output buffer
-    QQueue<AggregatedStep> m_outputSteps;
-    
-    // Statistics
-    int m_totalRawOps = 0;
-    int m_totalAggSteps = 0;
-    
-    // Current phase tracking
-    QString m_currentPhase;
+
+    AggregationConfig m_config; ///< Active aggregation configuration.
+
+    QVector<RawOperation> m_rawOps;          ///< Buffer of pending raw operations.
+    int                   m_processedIdx = 0; ///< Index up to which raw ops have been processed.
+
+    QQueue<AggregatedStep> m_outputSteps; ///< Queue of produced aggregated steps.
+
+    int m_totalRawOps   = 0; ///< Total raw operations ever enqueued.
+    int m_totalAggSteps = 0; ///< Total aggregated steps ever produced.
+
+    QString m_currentPhase; ///< Current algorithm phase label.
 };
 
 // ============================================================================

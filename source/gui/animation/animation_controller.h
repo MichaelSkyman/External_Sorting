@@ -10,38 +10,47 @@
 #include "animation_step.h"
 #include "animation_timer.h"
 
-// Animation speed presets
+/** @brief Adaptive speed profile controlling step pacing throughout playback. */
 struct SpeedProfile {
-    int introDelayMs = 1200;      // Very slow for intro
-    int earlyDelayMs = 800;       // Slow for early steps
-    int normalDelayMs = 400;      // Normal speed
-    int fastDelayMs = 150;        // Fast for later merge
-    int instantDelayMs = 50;      // Near instant
-    
-    // Transition points
-    int introSteps = 10;          // First N steps are intro pace
-    int earlySteps = 30;          // Next N steps are early pace
-    int normalSteps = 100;        // Then normal pace
-    // Beyond that is fast pace
+    int introDelayMs   = 1200; ///< Step delay during introduction (very slow).
+    int earlyDelayMs   = 800;  ///< Step delay during early sorting steps (slow).
+    int normalDelayMs  = 400;  ///< Step delay during normal sorting flow.
+    int fastDelayMs    = 150;  ///< Step delay during later merge phases (fast).
+    int instantDelayMs = 50;   ///< Step delay for near-instant transitions.
+
+    /// @name Transition Thresholds
+    /// @{
+    int introSteps  = 10;  ///< Steps at intro pace before switching to early pace.
+    int earlySteps  = 30;  ///< Steps at early pace before switching to normal pace.
+    int normalSteps = 100; ///< Steps at normal pace before switching to fast pace.
+    /// @note Beyond @c normalSteps, fast pace applies.
+    /// @}
 };
 
-// Snapshot of animation state for history/rewind
+/** @brief Snapshot of animation state used for history and rewind support. */
 struct AnimationState {
-    int stepIndex = 0;                          // Which step this state represents
-    AnimationStep step;                         // The animation step itself
-    QMap<QString, QVariant> visualState;        // Snapshot of visualization state
-    qint64 timestamp = 0;                       // When this state was captured
-    
-    // Block positions at this point
-    QVector<QPair<int, QPointF>> blockPositions;  // {blockId, position}
-    
-    // Phase information
-    QString currentPhase;
-    int runCount = 0;
-    
+    int stepIndex = 0;                           ///< Index of this snapshot in the step history.
+    AnimationStep step;                          ///< The animation step this snapshot belongs to.
+    QMap<QString, QVariant> visualState;         ///< Key-value snapshot of visualization properties.
+    qint64 timestamp = 0;                        ///< Timestamp (ms) when this snapshot was captured.
+
+    QVector<QPair<int, QPointF>> blockPositions; ///< Per-block positions at this point {blockId, pos}.
+
+    QString currentPhase; ///< Active sort phase label at this snapshot.
+    int runCount = 0;     ///< Number of sorted runs created at this point.
+
+    /// @brief Returns true if the snapshot holds valid data.
     bool isValid() const { return stepIndex >= 0; }
 };
 
+/**
+ * @brief Controls the animation step queue and drives playback.
+ *
+ * Manages a queue of AnimationStep objects, executes them with configurable
+ * timing, and emits granular signals (stepStarted, stepProgress, stepCompleted)
+ * for visualization components to respond to. Supports seeking, history
+ * snapshots, and adaptive speed profiles.
+ */
 class AnimationController : public QObject
 {
     Q_OBJECT
@@ -49,8 +58,8 @@ class AnimationController : public QObject
 public:
     explicit AnimationController(QObject* parent = nullptr);
     ~AnimationController();
-    
-    // Step queue management
+
+    /// @name Step Queue Management
     void enqueueStep(const AnimationStep& step);
     void enqueueSteps(const QVector<AnimationStep>& steps);
     void clearQueue();
@@ -144,41 +153,33 @@ private:
     void saveStateSnapshot();
     void restoreStateSnapshot(int stepIndex);
 
-    // Step queue
-    QQueue<AnimationStep> stepQueue;
-    AnimationStep currentStep;
-    
-    // All steps (for seeking/rewind)
-    QVector<AnimationStep> m_allSteps;
-    int m_currentStepIndex = -1;
-    
-    // History of animation states
-    QVector<AnimationState> m_history;
-    static constexpr int MaxHistorySize = 10000;  // Limit history to prevent memory issues
-    
-    // Current visualization state for snapshot
-    QMap<QString, QVariant> m_pendingVisualState;
-    QVector<QPair<int, QPointF>> m_pendingBlockPositions;
-    QString m_currentPhase;
-    int m_runCount = 0;
-    
-    // Timing
-    AnimationTimer frameTimer;
-    QTimer stepTimer;
-    QEasingCurve easingCurve;
-    
-    // State
-    bool playing = false;
-    bool paused = false;
-    bool processingStep = false;
-    
-    // Progress
-    int stepsExecuted = 0;
-    double currentProgress = 0.0;
-    double stepElapsedMs = 0.0;
-    
-    // Speed control
-    double speedMultiplier = 1.0;
-    bool adaptiveSpeedEnabled = true;
-    SpeedProfile speedProfile;
+    QQueue<AnimationStep> stepQueue;         ///< Pending animation steps awaiting execution.
+    AnimationStep currentStep;               ///< The step currently being played.
+
+    QVector<AnimationStep> m_allSteps;       ///< Full list of all steps (for seeking/rewind).
+    int m_currentStepIndex = -1;             ///< Index within m_allSteps of the current step.
+
+    QVector<AnimationState> m_history;       ///< Recorded state snapshots for rewind.
+    static constexpr int MaxHistorySize = 10000; ///< Maximum number of history snapshots kept.
+
+    QMap<QString, QVariant> m_pendingVisualState;         ///< Buffered visual state for the next snapshot.
+    QVector<QPair<int, QPointF>> m_pendingBlockPositions; ///< Buffered block positions for snapshot.
+    QString m_currentPhase; ///< Active sort phase label.
+    int m_runCount = 0;     ///< Number of runs created so far.
+
+    AnimationTimer frameTimer; ///< Frame-rate timer driving progress interpolation.
+    QTimer stepTimer;          ///< One-shot timer for step duration tracking.
+    QEasingCurve easingCurve;  ///< Easing curve applied to step progress values.
+
+    bool playing        = false; ///< True while playback is active.
+    bool paused         = false; ///< True when playback is paused.
+    bool processingStep = false; ///< True while a step is being executed.
+
+    int    stepsExecuted   = 0;   ///< Total number of steps executed in this session.
+    double currentProgress = 0.0; ///< Progress (0–1) through the current step.
+    double stepElapsedMs   = 0.0; ///< Elapsed time in the current step (ms).
+
+    double speedMultiplier      = 1.0;  ///< Global speed multiplier (e.g., 2.0 = double speed).
+    bool   adaptiveSpeedEnabled = true; ///< When true, uses SpeedProfile pacing.
+    SpeedProfile speedProfile;          ///< Speed profile controlling per-phase delays.
 };

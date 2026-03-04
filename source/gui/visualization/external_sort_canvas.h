@@ -22,18 +22,19 @@
 class AnimationEngine;
 class BlockItem;
 
-// ============================================================================
-// SORT RUN — Abstract representation of a sorted run stored on disk.
-// Only the head value (merge pointer) is actually rendered.
-// ============================================================================
+/**
+ * @brief Abstract representation of a sorted run stored on disk.
+ *
+ * Only the head value (the current merge pointer) is actually rendered.
+ */
 struct SortRun {
-    int  index      = 0;
-    int  totalSize  = 0;
-    QVector<double> values;       // sorted values (sampled for display)
-    int  readPointer = 0;         // current merge read position
-    bool active      = false;     // participating in current merge
-    bool highlighted = false;     // is the current minimum candidate
-    bool exhausted   = false;     // all elements consumed
+    int             index       = 0;     ///< Run index (0-based).
+    int             totalSize   = 0;     ///< Total number of elements in the run.
+    QVector<double> values;              ///< Sampled sorted values for display.
+    int             readPointer = 0;     ///< Current merge read position.
+    bool            active      = false; ///< True if participating in the current merge.
+    bool            highlighted = false; ///< True if this run holds the current minimum.
+    bool            exhausted   = false; ///< True when all elements have been consumed.
 
     double headValue() const {
         return (readPointer < values.size()) ? values[readPointer] : 0.0;
@@ -41,44 +42,51 @@ struct SortRun {
     bool hasMore() const { return readPointer < values.size(); }
 };
 
-// ============================================================================
-// AGGREGATED ANIMATION STEP
-// ============================================================================
+/**
+ * @brief A high-level visual animation step produced by StepAggregator.
+ *
+ * Multiple raw algorithm operations are batched into a single AggregatedStep
+ * to reduce rendering overhead while preserving visual fidelity.
+ */
 struct AggregatedStep {
+    /** @brief Visual operation types for aggregated animation steps. */
     enum class Type {
         None,
         IntroPhase,
-        LoadChunk,          // Blocks load from disk -> RAM
-        SortInRAM,          // In-place sort visualization
-        WriteRun,           // Write sorted chunk -> Run
-        MergePhase,         // Phase transition to merge
-        MergeStep,          // K-way merge: select min, write output
-        WriteOutput,        // Write to final output
-        PhaseTransition,    // Visual phase label
-        Complete
+        LoadChunk,       ///< Blocks loading from disk into RAM.
+        SortInRAM,       ///< In-place sort visualization inside RAM.
+        WriteRun,        ///< Writing sorted chunk to a run file.
+        MergePhase,      ///< Phase transition to the merge stage.
+        MergeStep,       ///< K-way merge: select minimum, write to output.
+        WriteOutput,     ///< Write final merged element to output file.
+        PhaseTransition, ///< Visual phase label transition.
+        Complete         ///< Sorting is fully complete.
     };
 
-    Type type = Type::None;
+    Type type = Type::None; ///< The type of visual operation.
 
-    QVector<int>    sourceBlocks;   // block / run indices
-    QVector<int>    targetBlocks;
-    QVector<double> values;         // actual data values carried
+    QVector<int>    sourceBlocks;  ///< Source block or run indices.
+    QVector<int>    targetBlocks;  ///< Target block or run indices.
+    QVector<double> values;        ///< Actual data values carried by this step.
 
-    double  duration       = 300.0;
-    QString statusText;
-    QPointF focusPoint;
-    int     operationCount = 1;
+    double  duration       = 300.0; ///< Recommended display duration in milliseconds.
+    QString statusText;             ///< Status message to show in the UI.
+    QPointF focusPoint;             ///< Camera focus point for this step.
+    int     operationCount = 1;     ///< Number of raw operations aggregated into this step.
 
-    // Merge-specific
-    int     runIndex       = -1;    // which run this relates to
-    int     mergeMinRun    = -1;    // which run had the minimum
+    int runIndex    = -1; ///< Run this step relates to (-1 = none).
+    int mergeMinRun = -1; ///< Run holding the minimum during a MergeStep (-1 = none).
 
+    /// @brief Returns true when this step signals sort completion.
     bool isComplete() const { return type == Type::Complete; }
 };
 
-// ============================================================================
-// ANIMATION ENGINE — Centralized 60 fps fixed-timestep controller
-// ============================================================================
+/**
+ * @brief Centralized 60 fps fixed-timestep animation engine.
+ *
+ * Drives step execution via a QTimer, interpolates progress between steps,
+ * and emits frame-rate-aligned signals for the canvas to respond to.
+ */
 class AnimationEngine : public QObject
 {
     Q_OBJECT
@@ -152,11 +160,12 @@ private:
     int    m_executedSteps = 0;
 };
 
-// ============================================================================
-// BLOCK ITEM — QGraphicsObject for a single data block.
-// Uses Q_PROPERTY for QPropertyAnimation-driven movement.
-// Paint is per-item: only dirty blocks are repainted (retained rendering).
-// ============================================================================
+/**
+ * @brief QGraphicsObject representing a single data block in the canvas.
+ *
+ * Exposes animated Q_PROPERTYs (opacity, scale, glow) for QPropertyAnimation-
+ * driven transitions. Only dirty items are repainted (retained rendering).
+ */
 class BlockItem : public QGraphicsObject
 {
     Q_OBJECT
@@ -173,7 +182,7 @@ public:
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
                QWidget* widget) override;
 
-    // Animated properties
+    /// @brief Animated properties
     qreal blockOpacity()  const { return m_opacity; }
     void  setBlockOpacity(qreal o);
 
@@ -183,7 +192,7 @@ public:
     qreal glowIntensity() const { return m_glow; }
     void  setGlowIntensity(qreal g);
 
-    // Data
+    /// @brief Data
     double value() const { return m_value; }
     void   setValue(double v) { m_value = v; update(); }
 
@@ -219,29 +228,30 @@ private:
     bool   m_sorted  = false;
 };
 
-// ============================================================================
-// CANVAS LAYOUT — Viewport-aware region computation.
-// OUTPUT section gets a guaranteed minimum height (OUTPUT_MIN_H).
-// ============================================================================
+/**
+ * @brief Viewport-aware region layout for the sort canvas.
+ *
+ * Divides the canvas into four named sections (Disk, RAM, Runs, Output)
+ * and computes block sizes adaptively. The Output section is guaranteed
+ * a minimum height of OUTPUT_MIN_H pixels.
+ */
 struct CanvasLayout {
-    QRectF diskArea;
-    QRectF ramArea;
-    QRectF runsArea;
-    QRectF outputArea;
+    QRectF diskArea;   ///< Bounding rectangle for the disk section.
+    QRectF ramArea;    ///< Bounding rectangle for the RAM section.
+    QRectF runsArea;   ///< Bounding rectangle for the sorted runs section.
+    QRectF outputArea; ///< Bounding rectangle for the output section.
 
-    // RAM block sizing
-    qreal blockWidth  = 60;
-    qreal blockHeight = 78;
-    qreal spacing     = 10;
-    qreal margin      = 6;
-    qreal sectionGap  = 14;
-    int   maxBlocksPerRow = 16;
+    qreal blockWidth      = 60; ///< Width of each RAM block in pixels.
+    qreal blockHeight     = 78; ///< Height of each RAM block in pixels.
+    qreal spacing         = 10; ///< Spacing between RAM blocks.
+    qreal margin          = 6;  ///< Inner margin around sections.
+    qreal sectionGap      = 14; ///< Gap between adjacent sections.
+    int   maxBlocksPerRow = 16; ///< Maximum blocks displayed per row in RAM.
 
-    // OUTPUT adaptive block sizing
-    qreal outputBlockW   = 60;   // adaptive width for output blocks
-    qreal outputBlockH   = 78;   // adaptive height for output blocks
-    int   outputCapacity = 20;   // max visible output blocks (sliding window)
-    bool  densityMode    = false; // true when outputBlockW < 12 px
+    qreal outputBlockW   = 60;   ///< Adaptive width for output blocks.
+    qreal outputBlockH   = 78;   ///< Adaptive height for output blocks.
+    int   outputCapacity = 20;   ///< Maximum visible output blocks (sliding window).
+    bool  densityMode    = false; ///< True when outputBlockW < DENSITY_THRESHOLD px.
 
     static constexpr qreal DISK_H   = 0.07;
     static constexpr qreal RAM_H    = 0.50;
@@ -265,18 +275,18 @@ struct CanvasLayout {
     QPointF outputBlockPos(int index) const;
 };
 
-// ============================================================================
-// EXTERNAL SORT CANVAS — QGraphicsView retained-rendering visualizer.
-//
-// DESIGN:
-//   - QGraphicsView + QGraphicsScene for hardware-accelerated dirty-rect updates
-//   - drawBackground()  renders cached section backgrounds / labels / run pills
-//   - BlockItem scene objects for animated data blocks (per-item repaint only)
-//   - drawForeground()  renders the phase overlay
-//   - Integer pixel snapping on all block positions (anti-blur)
-//   - QPropertyAnimation for block movement, opacity, scale
-//   - Guaranteed OUTPUT area minimum height (180 px)
-// ============================================================================
+/**
+ * @brief QGraphicsView-based retained-rendering sort visualizer.
+ *
+ * Design highlights:
+ * - QGraphicsView + QGraphicsScene for dirty-rect GPU-accelerated updates.
+ * - drawBackground() paints cached section backgrounds, labels, and run pills.
+ * - BlockItem objects handle per-item repaint (only dirty blocks redraw).
+ * - drawForeground() paints the phase-transition overlay.
+ * - Integer pixel snapping on all block positions prevents sub-pixel blur.
+ * - QPropertyAnimation drives block movement, opacity, and scale.
+ * - Output section is guaranteed a minimum height of 180 px.
+ */
 class ExternalSortCanvas : public QGraphicsView
 {
     Q_OBJECT
@@ -327,61 +337,60 @@ protected:
     void drawForeground(QPainter* painter, const QRectF& rect) override;
 
 private:
-    // ---- Scene management ----
+    /// @name Scene Management
+    /// @{
     BlockItem* createBlock(double value, const QPointF& pos);
     void       clearRamBlocks();
     void       clearOutputBlocks();
+    /// @}
 
-    // ---- Step execution (visual-only, per frame) ----
+    /// @name Step Execution (Visual-only, per frame)
+    /// @{
     void executeLoadChunk(const AggregatedStep& step, double progress);
     void executeSortInRAM(const AggregatedStep& step, double progress);
     void executeWriteRun(const AggregatedStep& step, double progress);
     void executeMergeStep(const AggregatedStep& step, double progress);
     void executeWriteOutput(const AggregatedStep& step, double progress);
     void executePhaseTransition(const AggregatedStep& step, double progress);
+    /// @}
 
-    // ---- Helpers ----
+    /// @name Helpers
+    /// @{
     void   recalculateLayout();
     void   rebuildOutputWindow();
     void   drawDensityBars(QPainter* painter, const QRectF& area);
     QColor valueToColor(double value) const;
     QVector<double> sampleValues(const QVector<double>& vals, int max) const;
     void   invalidateBackground();
+    /// @}
 
-    // ---- Scene ----
-    QGraphicsScene* m_scene = nullptr;
+    QGraphicsScene*  m_scene  = nullptr; ///< Underlying graphics scene.
+    AnimationEngine* m_engine = nullptr; ///< Animation engine providing frame updates.
 
-    // ---- Engine ----
-    AnimationEngine* m_engine = nullptr;
+    int    m_totalElements = 0;    ///< Total number of elements in the dataset.
+    double m_dataMin = 0.0;        ///< Minimum value in the dataset (for color mapping).
+    double m_dataMax = 1.0;        ///< Maximum value in the dataset (for color mapping).
+    int    m_diskLoaded    = 0;    ///< Number of elements loaded from disk so far.
 
-    // ---- VIEWPORT STATE (never one-block-per-element) ----
-    int    m_totalElements = 0;
-    double m_dataMin = 0.0, m_dataMax = 1.0;
-    int    m_diskLoaded    = 0;
+    QVector<BlockItem*> m_ramBlocks;       ///< Current RAM buffer block items.
+    QVector<SortRun>    m_runs;            ///< Sorted runs currently on disk.
+    QVector<BlockItem*> m_outputBlocks;    ///< Visible output block items (sliding window).
+    QVector<double>     m_allOutputValues; ///< All output values written (for density mode).
+    int    m_totalOutputWritten = 0;       ///< Total output elements written so far.
 
-    QVector<BlockItem*>    m_ramBlocks;       // current RAM buffer blocks
-    QVector<SortRun>       m_runs;            // sorted runs on disk
-    QVector<BlockItem*>    m_outputBlocks;    // visible output blocks (sliding window)
-    QVector<double>        m_allOutputValues; // ALL output values (for density mode)
-    int    m_totalOutputWritten = 0;
+    bool m_inMergePhase  = false; ///< True once the merge phase begins.
+    int  m_selectedMinRun = -1;   ///< Index of the run holding the merge minimum (-1 = none).
 
-    // Merge state
-    bool   m_inMergePhase   = false;
-    int    m_selectedMinRun  = -1;
+    CanvasLayout m_layout;     ///< Current canvas section layout.
+    qreal        m_zoom = 1.0; ///< Current zoom factor.
 
-    // Canvas state
-    CanvasLayout m_layout;
-    qreal m_zoom = 1.0;
+    QString             m_overlayText;            ///< Phase overlay label text.
+    qreal               m_overlayOpacity = 0.0;   ///< Phase overlay opacity (0–1).
+    QPropertyAnimation* m_overlayAnim    = nullptr; ///< Overlay fade animation.
 
-    // Overlay
-    QString m_overlayText;
-    qreal   m_overlayOpacity = 0.0;
-    QPropertyAnimation* m_overlayAnim = nullptr;
-
-    // Render state
-    AggregatedStep m_currentStep;
-    double m_stepProgress  = 0.0;
-    int    m_runsGenerated = 0;
+    AggregatedStep m_currentStep;        ///< Step being executed in the current frame.
+    double         m_stepProgress  = 0.0; ///< Progress (0–1) within the current step.
+    int            m_runsGenerated = 0;   ///< Number of sorted runs generated so far.
 
     static constexpr int MAX_VIS_BLOCKS = 64;
 };

@@ -6,20 +6,20 @@
 #include <QPainter>
 #include <QtMath>
 
-// Visual states for memory blocks
+/** @brief Visual state of a memory block, controlling its rendered color. */
 enum class BlockState {
-    Disk,           // On disk (gray)
-    Loading,        // Being loaded (yellow)
-    InRAM,          // In RAM buffer (blue)
-    Sorting,        // Being sorted (purple)
-    Compared,       // Being compared (orange)
-    Selected,       // Selected for merge (red)
-    Writing,        // Being written (green)
-    Output,         // Final output (teal)
-    Highlighted     // Special highlight
+    Disk,       ///< On disk – rendered gray.
+    Loading,    ///< Being loaded from disk – rendered yellow.
+    InRAM,      ///< In RAM buffer – rendered blue.
+    Sorting,    ///< Being sorted in RAM – rendered purple.
+    Compared,   ///< Being compared – rendered orange.
+    Selected,   ///< Selected as merge minimum – rendered red.
+    Writing,    ///< Being written to disk – rendered green.
+    Output,     ///< In final output – rendered teal.
+    Highlighted ///< Special highlight state.
 };
 
-// Represents a single data block for rendering - IMPROVED
+/** @brief Represents a single data block for rendering in the sort visualizer. */
 class MemoryBlock {
 public:
     MemoryBlock() = default;
@@ -30,28 +30,24 @@ public:
         , state(BlockState::Disk)
     {}
     
-    // Core properties
-    double value = 0.0;
-    int index = 0;
-    BlockState state = BlockState::Disk;
+    double     value = 0.0;              ///< Numeric data value this block represents.
+    int        index = 0;                ///< Position index in the original dataset.
+    BlockState state = BlockState::Disk; ///< Current visual state controlling color.
+
+    QRectF rect;           ///< Bounding rectangle in scene/widget coordinates.
+    qreal  opacity  = 1.0; ///< Opacity (0.0–1.0) for fade effects.
+    qreal  scale    = 1.0; ///< Uniform scale factor (1.0 = normal size).
+    qreal  rotation = 0.0; ///< Rotation angle in degrees.
+
+    qreal glowIntensity       = 0.0;   ///< Current glow intensity (0–1).
+    qreal targetGlowIntensity = 0.0;   ///< Target glow intensity for smooth interpolation.
+    qreal pulsePhase          = 0.0;   ///< Phase angle driving the pulsing animation.
+    bool  isAnimating         = false; ///< True while any animated property is transitioning.
+
+    qreal      colorTransitionProgress = 1.0;           ///< Progress (0–1) of the color state transition.
+    BlockState previousState           = BlockState::Disk; ///< Previous state for color interpolation.
     
-    // Position and size
-    QRectF rect;
-    qreal opacity = 1.0;
-    qreal scale = 1.0;
-    qreal rotation = 0.0;
-    
-    // Animation properties - IMPROVED for smoother transitions
-    qreal glowIntensity = 0.0;      // 0-1 glow effect
-    qreal targetGlowIntensity = 0.0; // Target for smooth interpolation
-    qreal pulsePhase = 0.0;         // For pulsing animation
-    bool isAnimating = false;
-    
-    // Smooth transition tracking
-    qreal colorTransitionProgress = 1.0;
-    BlockState previousState = BlockState::Disk;
-    
-    // Visual appearance - IMPROVED colors
+    /// @brief Returns the base color for the current visual state.
     QColor baseColor() const {
         switch (state) {
             case BlockState::Disk:
@@ -77,7 +73,7 @@ public:
         }
     }
     
-    // Create gradient for professional look - IMPROVED
+    /// @brief Creates a vertical gradient based on the block's base color.
     QLinearGradient createGradient() const {
         QColor base = baseColor();
         QLinearGradient gradient(rect.topLeft(), rect.bottomLeft());
@@ -92,7 +88,9 @@ public:
         return gradient;
     }
     
-    // Render the block - IMPROVED with smoother effects
+    /// @brief Renders this block using @p painter.
+    /// @param painter   QPainter to draw into.
+    /// @param maxValue  Maximum value in the dataset, used for proportional height.
     void render(QPainter* painter, double maxValue = 100.0) const {
         if (rect.isEmpty() || opacity <= 0.01) return;
         
@@ -176,7 +174,7 @@ public:
         painter->restore();
     }
     
-    // Update animation state - IMPROVED smoother interpolation
+    /// @brief Advances all animated properties by @p deltaTime seconds.
     void updateAnimation(double deltaTime) {
         // Smooth glow interpolation
         if (isAnimating) {
@@ -202,7 +200,7 @@ public:
         }
     }
     
-    // Smooth state change
+    /// @brief Transitions this block to @p newState, recording the previous state.
     void changeStateTo(BlockState newState) {
         if (state != newState) {
             previousState = state;

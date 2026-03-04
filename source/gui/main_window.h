@@ -18,10 +18,16 @@ class SortVisualizer;
 class TimelineScrubber;
 class MergeHeapWidget;
 class DiskIOAnimator;
-class FullscreenVisualizer;  // New fullscreen visualizer
+class FullscreenVisualizer;
 
 namespace Ui { class MainWindow; }
 
+/**
+ * @brief Main application window for the External Sorting visualizer.
+ *
+ * Manages the setup UI, sorting configuration, and drives the animation
+ * pipeline via AnimationController (legacy) and FullscreenVisualizer (primary).
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -31,41 +37,41 @@ public:
     ~MainWindow();
 
 private slots:
-    // File selection
+    /// @name File Selection
     void browseInput();
     void browseOutput();
-    
-    // Main actions
+
+    /// @name Main Actions
     void startSorting();
     void onChunkModeChanged();
-    
-    // Page navigation
+
+    /// @name Page Navigation
     void showSetupPage();
     void showAnimationPage();
     void onBackClicked();
-    
-    // Playback controls
+
+    /// @name Playback Controls
     void onPauseToggled(bool checked);
     void onStepForward();
     void onStepBackward();
     void onSpeedChanged(int value);
     void onQueueSizeChanged(int size);
-    
-    // Timeline
+
+    /// @name Timeline
     void onTimelineSeek(int stepIndex);
     void onStepIndexChanged(int currentIndex, int totalSteps);
-    
-    // Zoom controls
+
+    /// @name Zoom Controls
     void onZoomIn();
     void onZoomOut();
     void onZoomReset();
     void onZoomChanged(qreal factor);
-    
-    // Sorting callbacks
+
+    /// @name Sorting Callbacks
     void onSortingFinished();
     void onSortingError(const QString& error);
-    
-    // Animation callbacks
+
+    /// @name Animation Callbacks
     void onStepStarted(const struct AnimationStep& step);
     void onStepCompleted(const struct AnimationStep& step);
     void onPhaseChanged(const QString& phase);
@@ -84,41 +90,35 @@ private:
     Ui::MainWindow* ui;
     AppConfig config;
     
-    // Animation system
-    AnimationController* animController;
-    SortVisualizer* visualizer;
-    QGraphicsScene* scene;
-    
-    // New fullscreen visualization system
-    FullscreenVisualizer* fullscreenVisualizer = nullptr;
-    QStackedWidget* visualizerStack = nullptr;
-    bool useFullscreenMode = true;  // Toggle between legacy and fullscreen
-    
-    // New visualization widgets
-    TimelineScrubber* timelineScrubber;
-    MergeHeapWidget* heapWidget;
-    DiskIOAnimator* diskIOAnimator;
-    
-    // Toolbar and controls
-    QToolBar* controlToolbar;
-    QToolButton* playBtn;
-    QToolButton* pauseBtn;
-    QToolButton* stepBackBtn;
-    QToolButton* stepFwdBtn;
-    QSlider* speedSlider;
-    QLabel* speedLabel;
-    QToolButton* zoomInBtn;
-    QToolButton* zoomOutBtn;
-    QToolButton* zoomResetBtn;
-    QLabel* zoomLabel;
-    
-    // Status widgets
-    QLabel* phaseLabel;
-    QLabel* stepCountLabel;
-    QSplitter* mainSplitter;
-    
-    // State
-    bool isSorting = false;
-    QVector<double> sortData;
-    QString currentPhase;
+    AnimationController* animController; ///< Legacy step-based animation controller.
+    SortVisualizer*      visualizer;     ///< Legacy QWidget-based sort visualizer.
+    QGraphicsScene*      scene;          ///< Graphics scene used by the legacy visualizer.
+
+    FullscreenVisualizer* fullscreenVisualizer = nullptr; ///< Primary fullscreen visualizer.
+    QStackedWidget*       visualizerStack      = nullptr; ///< Stacks legacy and fullscreen views.
+    bool useFullscreenMode = true; ///< When true, the fullscreen visualizer is active.
+
+    TimelineScrubber* timelineScrubber; ///< Scrubber widget for step-by-step navigation.
+    MergeHeapWidget*  heapWidget;       ///< Widget visualizing the k-way merge heap.
+    DiskIOAnimator*   diskIOAnimator;   ///< Widget animating disk read/write transfers.
+
+    QToolBar*    controlToolbar; ///< Toolbar housing playback and zoom controls.
+    QToolButton* playBtn;        ///< Play button.
+    QToolButton* pauseBtn;       ///< Pause/resume toggle button.
+    QToolButton* stepBackBtn;    ///< Step-backward button.
+    QToolButton* stepFwdBtn;     ///< Step-forward button.
+    QSlider*     speedSlider;    ///< Speed control slider.
+    QLabel*      speedLabel;     ///< Label showing the current speed multiplier.
+    QToolButton* zoomInBtn;      ///< Zoom-in button.
+    QToolButton* zoomOutBtn;     ///< Zoom-out button.
+    QToolButton* zoomResetBtn;   ///< Zoom reset button.
+    QLabel*      zoomLabel;      ///< Label showing the current zoom level.
+
+    QLabel*    phaseLabel;     ///< Label showing the current sort phase.
+    QLabel*    stepCountLabel; ///< Label showing current/total step count.
+    QSplitter* mainSplitter;   ///< Splitter dividing the setup and visualizer areas.
+
+    bool            isSorting   = false; ///< True while sorting animation is in progress.
+    QVector<double> sortData;            ///< Loaded input data for the current session.
+    QString         currentPhase;        ///< Name of the currently active sort phase.
 };

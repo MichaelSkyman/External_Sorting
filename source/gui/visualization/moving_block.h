@@ -4,7 +4,7 @@
 #include <QEasingCurve>
 #include "memory_block.h"
 
-// Handles smooth animated movement of blocks
+/** @brief Wraps a MemoryBlock with smooth position, scale, and opacity animation. */
 class MovingBlock {
 public:
     MovingBlock() = default;
@@ -17,32 +17,29 @@ public:
         , isMoving(false)
     {}
     
-    // The underlying block
-    MemoryBlock block;
+    MemoryBlock block; ///< The underlying block data and visual state.
+
+    QPointF startPos;         ///< Animation start position.
+    QPointF endPos;           ///< Animation end position.
+    QPointF currentPos;       ///< Current interpolated position.
+    double  progress  = 1.0;  ///< Normalized animation progress (0–1).
+    bool    isMoving  = false; ///< True while a movement animation is in progress.
+
+    double       duration    = 500.0;                    ///< Total animation duration in milliseconds.
+    double       elapsed     = 0.0;                      ///< Time elapsed in the current animation (ms).
+    QEasingCurve easingCurve{QEasingCurve::InOutCubic};  ///< Easing curve applied to progress.
+
+    QPointF controlPoint;         ///< Bezier control point for curved-path movement.
+    bool    useBezier = false;    ///< When true, movement follows a quadratic Bezier curve.
+
+    double startScale   = 1.0; ///< Scale at the start of the animation.
+    double endScale     = 1.0; ///< Scale at the end of the animation.
+    double startOpacity = 1.0; ///< Opacity at the start of the animation.
+    double endOpacity   = 1.0; ///< Opacity at the end of the animation.
     
-    // Movement animation
-    QPointF startPos;
-    QPointF endPos;
-    QPointF currentPos;
-    double progress = 1.0;      // 0-1 animation progress
-    bool isMoving = false;
-    
-    // Animation parameters
-    double duration = 500.0;    // milliseconds
-    double elapsed = 0.0;
-    QEasingCurve easingCurve{QEasingCurve::InOutCubic};
-    
-    // Optional trajectory control
-    QPointF controlPoint;       // For curved paths
-    bool useBezier = false;
-    
-    // Scale/opacity transitions
-    double startScale = 1.0;
-    double endScale = 1.0;
-    double startOpacity = 1.0;
-    double endOpacity = 1.0;
-    
-    // Start movement animation
+    /// @brief Starts a linear movement animation to @p target.
+    /// @param target     Destination position.
+    /// @param durationMs Animation duration in milliseconds.
     void moveTo(QPointF target, double durationMs = 500.0) {
         startPos = block.rect.topLeft();
         endPos = target;
@@ -54,7 +51,10 @@ public:
         useBezier = false;
     }
     
-    // Start curved movement (for merge arrows etc)
+    /// @brief Starts a quadratic Bezier movement animation.
+    /// @param target     Destination position.
+    /// @param control    Bezier control point controlling the arc.
+    /// @param durationMs Animation duration in milliseconds.
     void moveAlongCurve(QPointF target, QPointF control, double durationMs = 600.0) {
         startPos = block.rect.topLeft();
         endPos = target;
@@ -67,7 +67,7 @@ public:
         useBezier = true;
     }
     
-    // Start scale animation
+    /// @brief Starts a scale animation towards @p targetScale.
     void scaleTo(double targetScale, double durationMs = 300.0) {
         startScale = block.scale;
         endScale = targetScale;
@@ -77,7 +77,7 @@ public:
         isMoving = true;
     }
     
-    // Start fade animation
+    /// @brief Starts an opacity animation towards @p targetOpacity.
     void fadeTo(double targetOpacity, double durationMs = 300.0) {
         startOpacity = block.opacity;
         endOpacity = targetOpacity;
@@ -87,7 +87,7 @@ public:
         isMoving = true;
     }
     
-    // Update animation (call each frame)
+    /// @brief Advances the animation by @p deltaTimeMs milliseconds.
     void update(double deltaTimeMs) {
         if (!isMoving) return;
         
@@ -128,23 +128,23 @@ public:
         }
     }
     
-    // Check if animation is complete
+    /// @brief Returns true when the animation has finished.
     bool isComplete() const {
         return !isMoving || progress >= 1.0;
     }
     
-    // Get remaining time
+    /// @brief Returns the remaining animation time in milliseconds.
     double remainingTime() const {
         return qMax(0.0, duration - elapsed);
     }
     
-    // Render the block
+    /// @brief Renders the block at its current animated position.
     void render(QPainter* painter, double maxValue = 100.0) const {
         block.render(painter, maxValue);
     }
 };
 
-// Manages a collection of moving blocks
+/** @brief Manages a collection of MovingBlock instances as a group. */
 class MovingBlockGroup {
 public:
     QVector<MovingBlock> blocks;
@@ -176,7 +176,7 @@ public:
         }
     }
     
-    // Move all blocks by offset
+    /// @brief Translates all blocks and their animation endpoints by @p offset.
     void offsetAll(QPointF offset) {
         for (auto& block : blocks) {
             block.block.rect.translate(offset);
@@ -186,7 +186,7 @@ public:
         }
     }
     
-    // Arrange in a row
+    /// @brief Arranges all blocks in a horizontal row starting at @p start.
     void arrangeHorizontally(QPointF start, double spacing, double blockWidth, double blockHeight) {
         double x = start.x();
         for (auto& block : blocks) {
@@ -195,7 +195,7 @@ public:
         }
     }
     
-    // Arrange in a grid
+    /// @brief Arranges all blocks in a grid layout starting at @p start.
     void arrangeGrid(QPointF start, int columns, double spacing, double blockWidth, double blockHeight) {
         int col = 0;
         int row = 0;
